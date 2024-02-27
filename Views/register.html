@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+
+
+
+
+
+    <link rel="stylesheet" href="/public/styles.css/general.css"/>
+    <link rel="icon" href="/public/assets/audiLogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/public/styles.css/account.css">
+    <link rel="stylesheet" href="/public/styles.css/media.css">
+  
+
+    
+</head>
+
+
+
+<body>
+
+    <header>
+
+        <nav>
+            <ul>
+                <!-- Logo taken from: https://brandslogos.com/cars/audi-logo-4/  -->
+                <li><a href="index.html"><img id="logo" src="/public/assets/audilogowhite.png" alt="This is the audi logo which shows 4 rings"></a></li> 
+                <li><a href="communities.html">Find a community</a></li>
+                <li><a href="#">Page 3</a></li>
+
+                <div class="loginSignUp">
+
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register </a></li>
+                </div>
+            </ul>
+        </nav>
+
+        <div class="popularTags">
+            <h2>Tags will go here</h2>
+        </div>
+    </header>
+
+
+<div class="registerForm">
+    <h1>Register</h1>
+    <h3>Fill out the form below to create an account</h3>
+    <form method="post" action="http://localhost:3000/register"">
+        <div class="form-group">
+            <label for="Username">Username</label>
+            <input type="text" id="fullname" name="Username" required placeholder="Enter your full name">
+            <span id="email_invalid"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="Email" required placeholder="Enter your email">
+        </div>
+       
+        <div class="form-group">
+            <label for="regpassword">Password</label>
+            <input type="password" id="regpassword" name="Password" required placeholder="Enter your password">
+        </div>
+
+        <button class="SubmitRegister" id="submitRegCredientals">Submit</button>
+
+    </form>
+</div>
+</body>
+
+</html>
