@@ -1,0 +1,130 @@
+.loginForm
+{
+    background-color: #666;;
+    width: 60%;
+    padding: 50px;
+   
+    position: relative;
+    left: 240px;
+    top: 50px;
+}
+
+.loginForm form .SubmitLogin
+{
+    width: 65%;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 140px;
+
+}
+.loginForm form .SubmitLogin:hover {background-color: darkgray;}
+.loginForm form input
+{
+    padding: 18px;
+    display: block;
+    width: 88%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.loginForm form input::placeholder
+{
+    font-size: 15px;
+    border: none;
+}
+
+.loginForm form label
+{
+   font-size: 20px;
+   font-family: sans-serif;
+   margin-left:24px;
+   color: white;
+   padding: 1px
+}
+
+.loginForm h1
+{
+    text-align: center;
+    font-weight: 100;
+    font-size: 35px;
+    font-family: sans-serif;
+    color: white;
+}
+.loginForm h3{
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+
+.registerForm
+{
+    background-color: #666;;
+    width: 60%;
+    padding: 50px;
+   
+    position: relative;
+    left: 240px;
+    top: 50px;
+}
+
+.registerForm form .SubmitRegister
+{
+    width: 65%;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 140px;
+}
+
+.registerForm form .SubmitRegister:hover {background-color: darkgray;}
+
+
+
+.registerForm form input
+{
+    padding: 18px;
+    display: block;
+    width: 88%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.registerForm form input::placeholder
+{
+    font-size: 15px;
+    border: none;
+}
+
+.registerForm form label
+{
+   font-size: 20px;
+   font-family: sans-serif;
+   margin-left:24px;
+   color: white;
+   padding: 1px
+}
+
+.registerForm h1
+{
+    text-align: center;
+    font-weight: 100;
+    font-size: 35px;
+    font-family: sans-serif;
+    color: white;
+}
+.registerForm h3{
+    text-align: center;
+    color: white;
+    font-weight: lighter;
+    font-size: 25px;
+    font-family: sans-serif;
+}

@@ -1,0 +1,346 @@
+@media only screen and (min-width:768px) and (max-width:1024px)
+{
+    /* ---------------------------------- GENERAL ---------------------------------- */
+
+
+    body
+    {
+        overflow-x: hidden;
+    }
+    header
+    {
+        background-color: black;
+        width: 200%;
+    }
+    .loginSignUp
+    {
+        border: 2px solid white;
+        width: 200px;
+        display: inline-block;
+        text-align: center;
+        padding: 5px;
+        font-size: 10px;
+        position: relative;
+        left: 150px;
+    }
+    /* ---------------------------------- INDEX ---------------------------------- */
+    .intro h3
+    {
+    position: relative;
+    top: -400px;
+    font-size: 35px;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 100;
+   }
+   .community
+{
+    height: 100px;
+    width: 100%;
+    position: relative;
+    top: 650px;
+    
+    text-align: center;
+}
+.community h2
+{
+    margin-bottom: 50px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 34px;
+}
+.community img
+{
+   width: 14%;
+   position: relative;
+   top: -24px;
+   right: 20px;
+}
+.community a
+{
+    color: black;
+    border: 3px solid black;
+    padding: 10px;
+    font-size: 22px;
+    text-decoration: none;
+    font-family: sans-serif;
+    position: relative;
+    top: -68px;
+}
+
+.text {
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    bottom: 0;
+    width: 94.2%;
+    padding: 22px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+   /* ---------------------------------- COMMUNTIES ---------------------------------- */
+   .comunity-containter
+{
+    width: 100% ;
+    height: 400px;
+    margin-bottom: 190px;
+    background-color: white;
+   
+}
+
+.comunity-containter h2 
+{
+    text-align: center;
+    font-weight: 100;
+    font-family: sans-serif;
+    border: 2px solid black;
+    width: 30%;
+    padding: 10px;
+}
+
+.comunity-containter h2 a:hover
+{
+    border-bottom: 2px solid red;
+}
+
+.A4 h2
+{
+    position: relative;
+    top: 120px;
+    left: 480px;
+}
+
+.A6 h2
+{
+    position: relative;
+    top: 20px;
+    left: 480px;
+}
+
+.comunity-containter a
+{
+    color: black;
+    
+}
+
+.A6 img
+{
+    width: 60%;
+    height: 380px;
+    position: relative;
+    top: -210px;
+    border-radius:10px ;
+    
+ 
+}
+
+.A4 img
+{
+    width: 60%;
+    position: relative;
+    top: -20px;
+    border-radius:10px;
+}
+
+.A7 img
+{
+    width: 60%;
+
+    position: relative;
+    top: -310px;
+    border-radius:10px ;
+}
+.A3 img
+{
+    width: 60%;
+    position: relative;
+    top: -500px;
+    border-radius:10px ;
+}
+.A3 h2
+{
+    position: relative;
+    top: -300px;
+    left: 480px;
+}
+.A1 img
+{
+    width: 60%;
+    position: relative;
+    top: -700px;
+    border-radius:10px ;
+
+}
+.A1 h2
+{
+    position: relative;
+    top: -520px;
+    left: 480px;
+}
+.A5 img
+{
+    width: 60%;
+    position: relative;
+    top: -900px;
+    border-radius:10px ;
+
+}
+
+.A5 h2
+{
+    position: relative;
+    top: -720px;
+    left: 480px;
+}
+
+.A8 h2
+{
+    position: relative;
+    top: -920px;
+    left: 480px;
+}
+
+.A7 h2
+{
+    position: relative;
+    top: -120px;
+    left: 480px;
+}
+
+
+
+.Q8 h2
+{
+    position: relative;
+    top: -1720px;
+    left: 480px;
+}
+.Q3 h2
+{
+    position: relative;
+    top: -1120px;
+    left: 480px;
+}
+.Q5 h2
+{
+    position: relative;
+    top:-1320px;
+    left: 480px;
+}
+.Q7 h2
+{
+    position: relative;
+    top: -1520px;
+    left: 480px;
+}
+.A8 img
+{
+    width: 60%;
+    position: relative;
+    top: -1100px;
+    border-radius:10px ;
+}
+
+
+.Q3 img
+{
+    width: 60%;
+    position: relative;
+    top: -1300px;
+    border-radius:10px ;
+
+}
+
+.Q5 img
+{
+    width: 60%;
+    position: relative;
+    top: -1500px;
+    border-radius:10px ;
+
+}
+
+
+.Q7 img
+{
+    width: 60%;
+    position: relative;
+    top: -1700px;
+    border-radius:10px ;
+
+}
+
+.Q8 img
+{
+    width: 60%;
+    position: relative;
+    top: -1900px;
+    border-radius:10px ;
+
+}
+/* ---------------------------------- INDIVIDUAL COMMUNTIES ---------------------------------- */
+.Introduction img
+{
+    width: 100%;
+}
+
+
+.Introduction h1
+{
+    position: relative;
+    top: -440px;
+    float: left;
+    left: 4px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+    font-weight: lighter;
+    background-color: white;
+    padding: 10px;
+    border: 3px solid black;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+   
+    backdrop-filter: blur(10px);
+
+}
+
+.Discussions h2
+{
+    position: relative;
+    left: 60px;
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+}
+
+
+
+
+
+/* ---------------------------------- LOGIN and REGISTER ---------------------------------- */
+.loginForm
+{
+    width: 80%;
+    position: relative;
+    left: 20px;
+    top: 50px;
+}
+
+.loginForm form .SubmitLogin
+{
+    margin-left: 100px;
+}
+
+.registerForm
+{
+    width: 80%;
+    position: relative;
+    left: 20px;
+    top: 50px;
+}
+
+.registerForm form .SubmitRegister
+{
+    margin-left: 100px;
+}
+}

@@ -1,0 +1,201 @@
+.comunity-containter
+{
+    width: 100% ;
+    height: 400px;
+    margin-bottom: 190px;
+    background-color: white;
+   
+}
+
+.comunity-containter h2 
+{
+    text-align: center;
+    font-weight: 100;
+    font-family: sans-serif;
+    border: 2px solid black;
+    width: 30%;
+    padding: 10px;
+}
+
+.comunity-containter h2 a:hover
+{
+    border-bottom: 2px solid red;
+}
+
+.A4 h2
+{
+    position: relative;
+    top: 100px;
+    left: 950px;
+}
+
+.A6 h2
+{
+    position: relative;
+    top: 100px;
+    left: 950px;
+}
+
+.comunity-containter a
+{
+    color: black;
+    
+}
+
+.A6 img
+{
+    width: 60%;
+    height: 560px;
+    position: relative;
+    top: -100px;
+    border-radius:10px ;
+    
+ 
+}
+
+.A4 img
+{
+    width: 60%;
+  
+    position: relative;
+    top: -100px;
+    border-radius:10px ;
+    
+ 
+}
+
+.A7 img
+{
+    width: 60%;
+  
+    position: relative;
+    top: -100px;
+    border-radius:10px ;
+}
+.A3 img
+{
+    width: 60%;
+    position: relative;
+    top: -100px;
+    border-radius:10px ;
+}
+.A1 img
+{
+    width: 60%;
+    position: relative;
+    top: -100px;
+    border-radius:10px ;
+
+}
+.A1 h2
+{
+    position: relative;
+    top: 100px;
+    left: 950px;
+}
+
+.A3 h2
+{
+    position: relative;
+    top: 100px;
+    left: 950px;
+}
+.A5 h2
+{
+    position: relative;
+    top: 100px;
+    left: 950px;
+}
+
+.A8 h2
+{
+    position: relative;
+    top: 100px;
+    left: 950px;
+}
+
+.A7 h2
+{
+    position: relative;
+    top: 100px;
+    left: 950px;
+}
+
+.A5 img
+{
+    width: 60%;
+    position: relative;
+    top: -100px;
+    border-radius:10px ;
+
+}
+
+.Q8 h2
+{
+    position: relative;
+    top: 100px;
+    left: 950px;
+}
+.Q3 h2
+{
+    position: relative;
+    top: 100px;
+    left: 950px;
+}
+.Q5 h2
+{
+    position: relative;
+    top: 100px;
+    left: 950px;
+}
+.Q7 h2
+{
+    position: relative;
+    top: 100px;
+    left: 950px;
+}
+.A8 img
+{
+    width: 60%;
+    position: relative;
+    top: -100px;
+    border-radius:10px ;
+}
+
+
+.Q3 img
+{
+    width: 60%;
+    position: relative;
+    top: -100px;
+    border-radius:10px ;
+
+}
+
+.Q5 img
+{
+    width: 60%;
+    position: relative;
+    top: -100px;
+    border-radius:10px ;
+
+}
+
+
+.Q7 img
+{
+    width: 60%;
+    position: relative;
+    top: -100px;
+    border-radius:10px ;
+
+}
+
+.Q8 img
+{
+    width: 60%;
+    position: relative;
+    top: -100px;
+    border-radius:10px ;
+
+}
