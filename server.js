@@ -1,5 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const indexRouter = require('./Routes/Index_router'); 
+const loginRouter = require('./Routes/login_router'); 
+const registerRouter = require('./Routes/register_router'); 
+const manage_accountRouter = require('./Routes/manage_account_router'); 
+const communitiesRouter = require('./Routes/communities_router'); 
+
+
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -9,17 +16,16 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // index page
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/Views/index.html');
-  });
+app.use('/',indexRouter);
+app.use('/communities', communitiesRouter);
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
+app.use('/manage-account', manage_accountRouter);
+
+
 
 // Route to handle form submission
-app.post('/contact', (req, res) => {
-  const { name, email, message } = req.body;
-  // Here you can process the form data as needed, for example, send an email, save to a database, etc.
-  console.log(`Received form submission: Name: ${name}, Email: ${email}, Message: ${message}`);
-  res.send('Form submitted successfully!'); // Send a response back to the client
-});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
