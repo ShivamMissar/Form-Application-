@@ -6,10 +6,10 @@
     <meta charset="UTF-8">
    
     <meta name="author" content="Shivam Missar">
-    <link rel="stylesheet" href="/public/styles.css/general.css">
-    <link rel="icon" href="/public/assets/audiLogo.png" type="image/x-icon">
-    <link rel="stylesheet" href="/public/styles.css/media.css">
-    <link rel="stylesheet" href="/public/styles.css/community.css">
+    <link rel="stylesheet" href="styles.css/general.css">
+    <link rel="icon" href="assets/audiLogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css/media.css">
+    <link rel="stylesheet" href="styles.css/community.css">
 
 
 
@@ -24,14 +24,16 @@
         <nav>
             <ul>
                 <!-- Logo taken from: https://brandslogos.com/cars/audi-logo-4/  -->
-                <li><a href="/public/index.html"><img id="logo" src="/public/assets/audilogowhite.png" alt="This is the audi logo which shows 4 rings"></a></li> 
-                <li><a href="/public/communities.html">Find a community</a></li>
+                <li><a href="/"><img id="logo" src="assets/audilogowhite.png" alt="This is the audi logo which shows 4 rings"></a></li> 
+                <li><a href="/communities">Find a community</a></li>
                 <li><a href="#">Page 3</a></li>
+                
 
                 <div class="loginSignUp">
-
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register </a></li>
+                    <li id="loginLink"><a href="/login">Login</a></li>
+                    <li id="registerLink"><a href="/register">Register</a></li>
+                    <li id="manageAccountLink" style="display: none;"><a href="/manage-account">Manage Account</a></li>
+                    <li id="signOutLink" style="display: none;"><a href="/logout">Sign Out</a></li>
                 </div>
             </ul>
         </nav>
@@ -48,7 +50,7 @@
    -->
         <div class="A4 comunity-containter">
             <h2><a href="A4community.html"><span class="changeTextColour">A4</span> communtiy page</a></h2>
-            <img src="/public/assets/a4-community.jpg"alt="image represents the a6 community">
+            <img src="assets/a4-community.jpg"alt="image represents the a6 community">
 
 
 
@@ -155,3 +157,4 @@
 
 
 </html>
+<script src="sites.js/header.js"></script>
