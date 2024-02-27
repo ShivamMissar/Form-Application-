@@ -17,14 +17,14 @@ app.use(express.static('public'));
 
 // index page
 app.use('/',indexRouter);
+
+
 app.use('/communities', communitiesRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/manage-account', manage_accountRouter);
 
 
-
-// Route to handle form submission
 
 
 const PORT = process.env.PORT || 3000;

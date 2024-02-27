@@ -12,10 +12,10 @@
 
 
 
-    <link rel="stylesheet" href="/public/styles.css/general.css"/>
-    <link rel="icon" href="/public/assets/audiLogo.png" type="image/x-icon">
-    <link rel="stylesheet" href="/public/styles.css/account.css">
-    <link rel="stylesheet" href="/public/styles.css/media.css">
+    <link rel="stylesheet" href="styles.css/general.css"/>
+    <link rel="icon" href="assets/audiLogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css/account.css">
+    <link rel="stylesheet" href="styles.css/media.css">
   
 
     
@@ -30,14 +30,17 @@
         <nav>
             <ul>
                 <!-- Logo taken from: https://brandslogos.com/cars/audi-logo-4/  -->
-                <li><a href="index.html"><img id="logo" src="/public/assets/audilogowhite.png" alt="This is the audi logo which shows 4 rings"></a></li> 
-                <li><a href="communities.html">Find a community</a></li>
+                <li><a href="/"><img id="logo" src="assets/audilogowhite.png" alt="This is the audi logo which shows 4 rings"></a></li> 
+                <li><a href="/communities">Find a community</a></li>
                 <li><a href="#">Page 3</a></li>
+                
 
                 <div class="loginSignUp">
-
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register </a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
+                        <div id="manageAccount" style="display: none;">
+                            <li><a href="/Views/manage-account.html">Manage Account</a></li>
+                        </div>
                 </div>
             </ul>
         </nav>
@@ -51,7 +54,7 @@
 <div class="registerForm">
     <h1>Register</h1>
     <h3>Fill out the form below to create an account</h3>
-    <form method="post" action="/register"">
+    <form method="post" action="/register">
         <div class="form-group">
             <label for="Username">Username</label>
             <input type="text" id="fullname" name="Username" required placeholder="Enter your full name">

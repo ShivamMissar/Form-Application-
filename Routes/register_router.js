@@ -6,4 +6,8 @@ router.get('/', (req, res) => {
   res.sendFile('register.html', { root: './views' });
 });
 
+
+
+
+
 module.exports = router;
