@@ -36,11 +36,10 @@
                 
 
                 <div class="loginSignUp">
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Register</a></li>
-                        <div id="manageAccount" style="display: none;">
-                            <li><a href="/Views/manage-account.html">Manage Account</a></li>
-                        </div>
+                    <li id="loginLink"><a href="/login">Login</a></li>
+                    <li id="registerLink"><a href="/register">Register</a></li>
+                    <li id="manageAccountLink" style="display: none;"><a href="/manage-account">Manage Account</a></li>
+                    <li id="signOutLink" style="display: none;"><a href="/logout">Sign Out</a></li>
                 </div>
             </ul>
         </nav>
@@ -75,25 +74,6 @@
 
     </form>
 </div>
-<script>
-    // Fetch login status from the server
-    fetch('/login-status')
-        .then(response => response.json())
-        .then(data => {
-            if (data.isLoggedIn) {
-                // User is logged in, show the manage account and signout links
-                document.getElementById('manageAccountLink').style.display = 'block';
-                document.getElementById('signOutLink').style.display = 'block';
-            } else {
-                // User is not logged in, hide the manage account and signout links
-                document.getElementById('manageAccountLink').style.display = 'none';
-                document.getElementById('signOutLink').style.display = 'none';
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching login status:', error);
-        });
-</script>
 </body>
 
 </html>
