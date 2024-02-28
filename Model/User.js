@@ -94,6 +94,84 @@ class User
             });
         });
     }
+
+
+
+
+    static async updateEmail(UserId,new_email)
+    {
+
+        let current_TIME = new Date();
+        const sql = "UPDATE users SET Email = ?, LastUpdatedAt = ? WHERE UserId = ?";
+        const values = [new_email, current_TIME, UserId];
+
+        return new Promise((resolve,reject) => 
+        {
+            POOL.query(sql,values, (err,result) =>
+            {
+                if(err)
+                {
+                    reject(err);
+                    return;
+                }
+                else
+                {
+                    resolve(result.insertId);
+                }
+            });
+        });
+
+    }
+
+
+    static async updatePassword(new_password,UserId)
+    {
+        let current_TIME = new Date();
+        const hashedpassword = md5(new_password);
+        const sql = "UPDATE users SET Password = ?, LastUpdatedAt = ? WHERE UserId = ?";
+        const values = [hashedpassword, current_TIME, UserId];
+
+        return new Promise((resolve,reject) => 
+        {
+            POOL.query(sql,values, (err,result) =>
+            {
+                if(err)
+                {
+                    reject(err);
+                    return;
+                }
+                else
+                {
+                    resolve(result.insertId);
+                }
+            });
+        });
+    }
+
+
+    static async updateUsername(_new_username, UserId)
+    {
+        let current_TIME = new Date();
+    
+        const sql = "UPDATE users SET Username = ?, LastUpdatedAt = ? WHERE UserId = ?";
+        const values = [_new_username, current_TIME, UserId];
+
+        return new Promise((resolve,reject) => 
+        {
+            POOL.query(sql,values, (err,result) =>
+            {
+                if(err)
+                {
+                    reject(err);
+                    return;
+                }
+                else
+                {
+                    resolve(result.insertId);
+                }
+            });
+        });
+    }
 }
 
 
