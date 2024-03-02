@@ -44,10 +44,26 @@ app.use((req, res, next) => {
   next();
 });
 
-
+// this gets the session data for the flag
 app.get('/login-status', (req, res) => {
   const isLoggedIn = req.session.isLoggedIn || false;
   res.json({ isLoggedIn });
+});
+
+
+app.get('/profile', (req, res) => 
+{
+
+  if (req.session.isLoggedIn) // if the user is logged in, it will retrieve the details about the user through the session
+  {
+    const userInformation = req.session.user;
+
+    res.render('manageaccount', {user});
+  }else
+  {
+    res.redirect('/login');
+  }
+
 });
 
 const PORT = process.env.PORT || 3000;

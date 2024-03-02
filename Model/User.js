@@ -22,13 +22,14 @@ class User
 
     static async register_user(userInformation)
     {
-        const { Username, Email, Password } = userInformation;
-        const user_id = User.genUserId();
+        const { Username, Email, Password } = userInformation; // gets the data from the frontend 
+        const user_id = User.genUserId(); // this generates a unique ID when storing into the database. 
 
+        // creates a SQL statement to send the data into the database
         const sql = 'INSERT INTO users (UserId, Username, Email, Password) VALUES (?, ?, ?, ?)';
         //hash the password for better security.
-        let hashedpassword = User.hashPassword(Password);
-        const values = [user_id, Username, Email, hashedpassword];
+        let hashedpassword = User.hashPassword(Password); // hashes the password using MD5 hashing method
+        const values = [user_id, Username, Email, hashedpassword]; // provides the values to the SQL statement
         
         // Promise is a API provided by SQL which supports async methods and helps reduce code reduncy.
         return new Promise((resolve,reject) => 
@@ -53,8 +54,8 @@ class User
 
     static async user_login(Username,Password)
     {
-        const sql = "SELECT Username, Password FROM users WHERE Username = ? AND Password = ?";
-        let hashpassword = User.hashPassword(Password);
+        const sql = "SELECT UserId,Username, Email, Password FROM users WHERE Username = ? AND Password = ?";
+        let hashpassword = User.hashPassword(Password); // has to hash the password to compare against values in the database.
         const  values = [Username,hashpassword]; // This provides the values to the query.
 
         return new Promise((resolve,reject) => 
@@ -69,7 +70,7 @@ class User
                 {
                     if(result.length > 0) // if the query returns something more than 0 then it means it has found the values provided
                     {
-                        resolve({success: true, user: result[0]});
+                        resolve({success: true, user: result[0]}); // stores the user data found first if matched in result
                     }else
                     {
                         resolve({success:false});
@@ -77,7 +78,6 @@ class User
                 }
             });
         });
-
     }
 
     static async signOut() {
@@ -94,9 +94,6 @@ class User
             });
         });
     }
-
-
-
 
     static async updateEmail(UserId,new_email)
     {
@@ -120,7 +117,6 @@ class User
                 }
             });
         });
-
     }
 
 

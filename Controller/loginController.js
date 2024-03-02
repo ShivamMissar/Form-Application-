@@ -23,7 +23,7 @@ const logUserIn = async(req,res) =>
         else
         {
             req.session.isLoggedIn = true;
-            req.session.user = login_confirmation; 
+            req.session.User = login_confirmation.user; 
             const userDataQueryString = encodeURIComponent(JSON.stringify(login_confirmation));
            // goes back to the index page
            return res.redirect(`/?loggedIn=true&userData=${userDataQueryString}`);
