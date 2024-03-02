@@ -120,7 +120,7 @@ class User
     }
 
 
-    static async updatePassword(new_password,UserId)
+    static async updatePassword(UserId,new_password)
     {
         let current_TIME = new Date();
         const hashedpassword = md5(new_password);
@@ -145,7 +145,7 @@ class User
     }
 
 
-    static async updateUsername(_new_username, UserId)
+    static async updateUsername(UserId,_new_username)
     {
         let current_TIME = new Date();
     
