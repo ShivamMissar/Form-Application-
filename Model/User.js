@@ -54,7 +54,7 @@ class User
 
     static async user_login(Username,Password)
     {
-        const sql = "SELECT UserId,Username, Email, Password FROM users WHERE Username = ? AND Password = ?";
+        const sql = "SELECT UserId,Username,Email, Password FROM users WHERE Username = ? AND Password = ?";
         let hashpassword = User.hashPassword(Password); // has to hash the password to compare against values in the database.
         const  values = [Username,hashpassword]; // This provides the values to the query.
 
