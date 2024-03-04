@@ -4,12 +4,17 @@ const session = require('express-session');
 
 
 const bodyParser = require('body-parser');
+
+// Routes to diffrent pages
 const indexRouter = require('./Routes/Index_router'); 
 const loginRouter = require('./Routes/login_router'); 
 const registerRouter = require('./Routes/register_router'); 
 const manage_accountRouter = require('./Routes/manage_account_router'); 
 const communitiesRouter = require('./Routes/communities_router'); 
 const signOutRouter = require('./Routes/signOut_router'); 
+const a4CommunityRouter = require('./Routes/A4_router');
+
+
 
 
 
@@ -34,6 +39,7 @@ app.use('/',indexRouter);
 
 app.use('/communities', communitiesRouter);
 app.use('/login', loginRouter);
+app.use('/A4', a4CommunityRouter);
 app.use('/signout', signOutRouter);
 app.use('/register', registerRouter);
 app.use('/manage-account', manage_accountRouter);
