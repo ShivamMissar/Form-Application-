@@ -2,13 +2,13 @@
 <html>
 
 <head>
-    <title>Homepage</title>
+    <title>Manage Your Account</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="author" content="Shivam Missar">
     <link rel="icon" href="assets/audiLogo.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="styles.css/general.css">
-    <link rel="stylesheet" href="styles.css/index.css">
+    <link rel="stylesheet" href="styles.css/manageAccount.css">
     <link rel="stylesheet" href="styles.css/media.css">
     <script src=sites.js/index.js defer></script>    
    
@@ -39,9 +39,10 @@
 
 
     <div class="update-container">
+        <h1>Manage your account</h1>
         <form method="post" action="/manage-account/update-email">
             <label for="newemail">New Email</label>
-            <input type="email" name="newemail" id="newemail">
+            <input type="email" name="newemail" id="newemail" placeholder="Enter your new email here">
     
             <button class="SubmitRegister" id="">Submit</button>
         </form>
@@ -49,14 +50,14 @@
     
         <form method="post" action="/manage-account/update-password">
             <label for="newPassword">New Password</label>
-            <input type="password" name="newPassword" id="newPassword">
+            <input type="password" name="newPassword" id="newPassword" placeholder="Enter your new password here">
             <button class="SubmitRegister" id="">Submit</button>
         </form>
     
     
         <form method="post" action="/manage-account/update-username">
             <label for="newUsername">New Username</label>
-            <input type="text" name="newUsername" id="newUsername">
+            <input type="text" name="newUsername" id="newUsername"placeholder="Enter your new username here">
     
             <button class="SubmitRegister" id="">Submit</button>
         </form>

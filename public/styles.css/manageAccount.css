@@ -1,0 +1,53 @@
+.update-container 
+{
+    background-color: #666;
+    width: 100%;
+    height: 350px;
+}
+
+.update-container h1
+{
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+
+
+.update-container form 
+{
+    padding: 10px;
+    position: relative;
+    left: 550px;
+}
+
+
+.update-container form input
+{
+    border-radius: 10px ;
+    padding: 8px;
+    width: 500px;
+    border: none;
+}
+
+.update-container form label
+{
+    display: block;
+    color: white;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.update-container form button
+{
+    border: none;
+    padding: 8px;
+    width: 100px;
+    cursor: pointer;
+    font-family: sans-serif;
+
+}
+
+.update-container form button:hover
+{
+    background-color: darkgray;
+}
