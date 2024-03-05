@@ -31,7 +31,7 @@ class User
         let hashedpassword = User.hashPassword(Password); // hashes the password using MD5 hashing method
         const values = [user_id, Username, Email, hashedpassword]; // provides the values to the SQL statement
         
-        // Promise is a API provided by SQL which supports async methods and helps reduce code reduncy.
+       
         return new Promise((resolve,reject) => 
         {
             POOL.query(sql,values, (err,result) =>
@@ -169,8 +169,4 @@ class User
         });
     }
 }
-
-
-
-
 module.exports = User;
