@@ -18,7 +18,7 @@ class Discussions
     
         let discussionId = this.genDiscussionId(); 
     
-        const SQL = "INSERT INTO posts (DiscussionId, UserId, Title, Description, ModelType) VALUES (?, ?, ?, ?, ?)";
+        const SQL = "INSERT INTO posts (DisccusionId, UserId, Title, Description, ModelType) VALUES (?, ?, ?, ?, ?)";
         const VALUES = [discussionId, userId, Title, description, modelType];
     
         return new Promise((resolve, reject) => {
