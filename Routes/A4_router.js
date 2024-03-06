@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
         console.error('Error fetching discussions:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
-})
+});
 
   
 

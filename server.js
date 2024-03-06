@@ -13,7 +13,18 @@ const registerRouter = require('./Routes/register_router');
 const manage_accountRouter = require('./Routes/manage_account_router'); 
 const communitiesRouter = require('./Routes/communities_router'); 
 const signOutRouter = require('./Routes/signOut_router'); 
+
+const a1CommunityRouter = require('./Routes/A1_router');
+const a3CommunityRouter = require('./Routes/A3_router');
 const a4CommunityRouter = require('./Routes/A4_router');
+const a5CommunityRouter = require('./Routes/A5_router');
+const a6CommunityRouter = require('./Routes/A6_router');
+const a7CommunityRouter = require('./Routes/A7_router');
+const a8CommunityRouter = require('./Routes/A8_router');
+const q3CommunityRouter = require('./Routes/Q3_router');
+const q5CommunityRouter = require('./Routes/Q5_router');
+const q7CommunityRouter = require('./Routes/Q7_router');
+const q8CommunityRouter = require('./Routes/Q8_router');
 
 
 
@@ -43,7 +54,26 @@ app.use('/',indexRouter);
 
 app.use('/communities', communitiesRouter);
 app.use('/login', loginRouter);
+
+//routers for all the models
+app.use('/A1', a1CommunityRouter);
+app.use('/A3', a3CommunityRouter);
 app.use('/A4', a4CommunityRouter);
+app.use('/A5', a5CommunityRouter);
+app.use('/A6', a6CommunityRouter);
+app.use('/A7', a7CommunityRouter);
+app.use('/A8', a8CommunityRouter);
+app.use('/Q3', q3CommunityRouter);
+app.use('/Q5', q5CommunityRouter);
+app.use('/Q7', q7CommunityRouter);
+app.use('/Q8', q8CommunityRouter);
+
+
+
+
+
+
+
 app.use('/signout', signOutRouter);
 app.use('/register', registerRouter);
 app.use('/manage-account', manage_accountRouter);

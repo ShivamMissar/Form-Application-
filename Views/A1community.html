@@ -49,34 +49,44 @@
 
 
 <section class="Discussions">
-
     <h2 class="changeTextColour">Discussions</h2>
-
-
-
+    <button id="addPost" onclick="getForm()" class="disccusionButton">Start a discussion</button>
+    <div class="disccusionForm" id="disccusionForm">
+        <h4>Your Post</h1>
+            <form method="post" action="/A4/A4discussions">
+                <label for="Title">Topic Of discussion</label>
+                <input type="text" name="Title" id="title" placeholder="Enter your title of disccusion here">
+                <label for="description">What is your question</label>
+                <input type="text" name="description" placeholder="Enter your question here">
+                <input type="hidden" name="modelType" id="modelType">
+                <button type="submit">Start disccusion</button>
+            </form>
+    </div>
 </section>
+
+<div id="discussionContainer" class="showPosts">
+    <h2>User Posts</h2>
+    <div id="discussions"></div>
+</div>
 
 <footer>
     <div class="bottom-footer">
         <nav>
-            <!-- Bottom navigation for ease -->
             <ul>
-                <!-- Logo taken from: https://brandslogos.com/cars/audi-logo-4/  -->
-                <li><a href="index.html"><img id="logo" src="assets/audilogowhite.png" alt="This is the audi logo which shows 4 rings"></a></li> 
-                <li><a href="communities.html">Find a community</a></li>
+                <li><a href="/index"><img id="logo" src="assets/audilogowhite.png" alt="This is the audi logo which shows 4 rings"></a></li>
+                <li><a href="/communities">Find a community</a></li>
                 <li><a href="#">Page 3</a></li>
             </ul>
         </nav>
-    
         <div class="back2top">
             <a href="#top">Back to the top</a>
         </div>
     </div>
-
     <p class="trademark">2024 Audi Forum Website &#174;</p>
 </footer>
+
+
+
 </body>
-
-
 
 </html>
