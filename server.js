@@ -2,6 +2,7 @@ const express = require('express');
 
 const session = require('express-session');
 
+const discussionsController = require('./Controller/discussionsController');
 
 const bodyParser = require('body-parser');
 
@@ -31,6 +32,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+
+
 
 
 // index page
@@ -71,6 +75,23 @@ app.get('/profile', (req, res) =>
   }
 
 });
+
+
+app.get('/api/discussions', async (req, res) => {
+  try {
+      const discussions = await discussionsController.getAllDiscussionsForModel("A4");
+      const discussionsJSON = discussions.map(discussion => ({
+          Username: discussion.Username,
+          Title: discussion.Title,
+          Description: discussion.Description
+      }));
+      res.json(discussionsJSON);
+  } catch (error) {
+      console.error('Error fetching discussions:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

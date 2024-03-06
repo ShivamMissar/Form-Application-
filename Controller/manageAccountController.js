@@ -30,9 +30,10 @@ const update_UserName = async(req, res) =>
     const {newUsername} = req.body;
     const userId = req.session.User.UserId;
     const newUsernameUpdate = await User.updateUsername(userId,newUsername); 
-
     res.redirect('/manage-account');
-
 };
+
+
+
 
 module.exports = {updateEmail,updatePassword,update_UserName};

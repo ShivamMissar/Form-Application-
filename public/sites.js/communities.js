@@ -1,10 +1,10 @@
-function getUrl()
-{
+function getUrl() {
     let currentPage = window.location.href;
-    let extractURLPART;
-    extractURLPART = currentPage.split("community")[0];
+    let lastSlashIndex = currentPage.lastIndexOf("/");
+    let extractURLPART = currentPage.substring(lastSlashIndex + 1);
     return extractURLPART;
 }
+
 
 
 function getForm()
@@ -12,4 +12,7 @@ function getForm()
     document.getElementById('disccusionForm').style.display = 'block';
 }
 
+
+
+  
 

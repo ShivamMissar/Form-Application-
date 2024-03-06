@@ -1,4 +1,5 @@
 
+const { query } = require('express');
 const POOL = require('./db');
 
 
@@ -31,8 +32,26 @@ class Discussions
             });
         });
     }
+
+
+
+
+
+    // this function is used to get all the discussions based on the model
+    static async getAllDiscussions(discussionsForModel) {
+        const SQL = "SELECT users.Username, posts.Title, posts.Description FROM users, posts WHERE posts.UserId = users.UserId AND ModelType = ?";
+        const VALUES = [discussionsForModel];
     
-     
+        return new Promise((resolve, reject) => {
+            POOL.query(SQL, VALUES, (err, result) => {
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve(result);
+            });
+        });
+    }
 }
 
 module.exports = Discussions;

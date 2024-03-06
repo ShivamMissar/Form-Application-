@@ -18,4 +18,26 @@ const post_A_Discussion = async(req,res) =>
 };
 
 
-module.exports = {post_A_Discussion};
+const getAllDiscussionsForModel = async (car_model) => {
+    try {
+        const discussions = await Discussions.getAllDiscussions(car_model);
+        const formattedDiscussions = discussions.map(row => {
+            return {
+                Username: row.Username,
+                Title: row.Title,
+                Description: row.Description
+            };
+        });
+        return formattedDiscussions;
+    } catch (error) {
+        console.error('Error fetching discussions:', error);
+        throw error; // Propagate the error to the caller
+    }
+};
+
+
+
+
+
+
+module.exports = {post_A_Discussion, getAllDiscussionsForModel};
