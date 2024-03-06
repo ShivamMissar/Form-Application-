@@ -146,6 +146,7 @@
     background-color: #666;
     color: white;
     cursor: pointer;
+    display: none;
 }
 .discussion-delete
 {
@@ -154,6 +155,7 @@
     background-color: red;
     color: white;
     cursor: pointer;
+    display: none;
 }
 
 
