@@ -11,7 +11,8 @@ router.get('/', (req, res) => {
   router.post('/A1discussions', post_A_Discussion);
 
   // gets the posts made for A1 model
-  router.get('/discussions', async (req, res) => {
+  router.get('/discussions', async (req, res) => 
+  {
     try {
         const modelType = 'A1';
         const discussions = await getAllDiscussionsForModel(modelType);

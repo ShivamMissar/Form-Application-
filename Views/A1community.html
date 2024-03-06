@@ -48,12 +48,14 @@
 </section>
 
 
+
+
 <section class="Discussions">
     <h2 class="changeTextColour">Discussions</h2>
     <button id="addPost" onclick="getForm()" class="disccusionButton">Start a discussion</button>
     <div class="disccusionForm" id="disccusionForm">
         <h4>Your Post</h1>
-            <form method="post" action="/A4/A4discussions">
+            <form method="post" action="/A1/A1discussions">
                 <label for="Title">Topic Of discussion</label>
                 <input type="text" name="Title" id="title" placeholder="Enter your title of disccusion here">
                 <label for="description">What is your question</label>
@@ -85,8 +87,62 @@
     <p class="trademark">2024 Audi Forum Website &#174;</p>
 </footer>
 
+<script>
+    function fetchDiscussions() {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', '/api/discussionsA1');
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const discussions = JSON.parse(xhr.responseText);
+                    resolve(discussions);
+                } else {
+                    reject(new Error(`Failed to fetch discussions: ${xhr.statusText}`));
+                }
+            };
+            xhr.onerror = function () {
+                reject(new Error('Network error occurred while fetching discussions'));
+            };
+            xhr.send();
+        });
+    }
+
+    function displayDiscussions() {
+        fetchDiscussions()
+            .then(discussions => {
+                const discussionsContainer = document.getElementById('discussions');
+                discussions.forEach(discussion => 
+                {
+                    // for each new post a div is created
+                    const discussionElement = document.createElement('div');
+                    discussionElement.classList.add('discussion');
+
+                    discussionElement.innerHTML = `
+                    <h3 class="discussion-topic"> Topic: ${discussion.Title}</h3>
+                <p class="discussion-description"> Question ${discussion.Description}</p>
+                <p class="discussion-username">Posted by: ${discussion.Username}</p>
 
 
+                <button class="discussion-reply replyButton"  onclick="replyToDiscussion('${discussion.Title}', '${discussion.Username}')">Reply</button>
+                <button class="discussion-delete deleteButton"  onclick="deleteDiscussion('${discussion.Title}', '${discussion.Username}')">Delete</button>
+            `;
+                    discussionsContainer.appendChild(discussionElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching or displaying discussions:', error);
+            });
+    }
+
+    // Call the displayDiscussions function to fetch and display discussions
+    displayDiscussions();
+</script>
+
+<script src="sites.js/communities.js"></script>
+<script>
+    document.getElementById('modelType').value = getUrl();
+</script>
+
+<script src="sites.js/header.js"></script>
 </body>
-
 </html>

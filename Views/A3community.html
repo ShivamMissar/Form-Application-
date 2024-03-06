@@ -52,33 +52,98 @@
 
 
 <section class="Discussions">
-
     <h2 class="changeTextColour">Discussions</h2>
-
-
-
+    <button id="addPost" onclick="getForm()" class="disccusionButton">Start a discussion</button>
+    <div class="disccusionForm" id="disccusionForm">
+        <h4>Your Post</h1>
+            <form method="post" action="/A3/A3discussions">
+                <label for="Title">Topic Of discussion</label>
+                <input type="text" name="Title" id="title" placeholder="Enter your title of disccusion here">
+                <label for="description">What is your question</label>
+                <input type="text" name="description" placeholder="Enter your question here">
+                <input type="hidden" name="modelType" id="modelType">
+                <button type="submit">Start disccusion</button>
+            </form>
+    </div>
 </section>
+
+<div id="discussionContainer" class="showPosts">
+    <h2>User Posts</h2>
+    <div id="discussions"></div>
+</div>
+
 <footer>
     <div class="bottom-footer">
         <nav>
-            <!-- Bottom navigation for ease -->
             <ul>
-                <!-- Logo taken from: https://brandslogos.com/cars/audi-logo-4/  -->
-                <li><a href="/index"><img id="logo" src="assets/audilogowhite.png" alt="This is the audi logo which shows 4 rings"></a></li> 
+                <li><a href="/index"><img id="logo" src="assets/audilogowhite.png" alt="This is the audi logo which shows 4 rings"></a></li>
                 <li><a href="/communities">Find a community</a></li>
                 <li><a href="#">Page 3</a></li>
             </ul>
         </nav>
-    
         <div class="back2top">
             <a href="#top">Back to the top</a>
         </div>
     </div>
-
     <p class="trademark">2024 Audi Forum Website &#174;</p>
 </footer>
+
+<script>
+    function fetchDiscussions() {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', '/api/discussionsA3');
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    const discussions = JSON.parse(xhr.responseText);
+                    resolve(discussions);
+                } else {
+                    reject(new Error(`Failed to fetch discussions: ${xhr.statusText}`));
+                }
+            };
+            xhr.onerror = function () {
+                reject(new Error('Network error occurred while fetching discussions'));
+            };
+            xhr.send();
+        });
+    }
+
+    function displayDiscussions() {
+        fetchDiscussions()
+            .then(discussions => {
+                const discussionsContainer = document.getElementById('discussions');
+                discussions.forEach(discussion => 
+                {
+                    // for each new post a div is created
+                    const discussionElement = document.createElement('div');
+                    discussionElement.classList.add('discussion');
+
+                    discussionElement.innerHTML = `
+                    <h3 class="discussion-topic"> Topic: ${discussion.Title}</h3>
+                <p class="discussion-description"> Question ${discussion.Description}</p>
+                <p class="discussion-username">Posted by: ${discussion.Username}</p>
+
+
+                <button class="discussion-reply replyButton"  onclick="replyToDiscussion('${discussion.Title}', '${discussion.Username}')">Reply</button>
+                <button class="discussion-delete deleteButton"  onclick="deleteDiscussion('${discussion.Title}', '${discussion.Username}')">Delete</button>
+            `;
+                    discussionsContainer.appendChild(discussionElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching or displaying discussions:', error);
+            });
+    }
+
+    // Call the displayDiscussions function to fetch and display discussions
+    displayDiscussions();
+</script>
+
+<script src="sites.js/communities.js"></script>
+<script>
+    document.getElementById('modelType').value = getUrl();
+</script>
+
+<script src="sites.js/header.js"></script>
 </body>
-
-
-
 </html>

@@ -107,9 +107,151 @@ app.get('/profile', (req, res) =>
 });
 
 
-app.get('/api/discussions', async (req, res) => {
+app.get('/api/discussionsA4', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("A4");
+      const discussionsJSON = discussions.map(discussion => ({
+          Username: discussion.Username,
+          Title: discussion.Title,
+          Description: discussion.Description
+      }));
+      res.json(discussionsJSON);
+  } catch (error) {
+      console.error('Error fetching discussions:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.get('/api/discussionsA1', async (req, res) => {
+  try {
+      const discussions = await discussionsController.getAllDiscussionsForModel("A1");
+      const discussionsJSON = discussions.map(discussion => ({
+          Username: discussion.Username,
+          Title: discussion.Title,
+          Description: discussion.Description
+      }));
+      res.json(discussionsJSON);
+  } catch (error) {
+      console.error('Error fetching discussions:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.get('/api/discussionsA3', async (req, res) => {
+  try {
+      const discussions = await discussionsController.getAllDiscussionsForModel("A3");
+      const discussionsJSON = discussions.map(discussion => ({
+          Username: discussion.Username,
+          Title: discussion.Title,
+          Description: discussion.Description
+      }));
+      res.json(discussionsJSON);
+  } catch (error) {
+      console.error('Error fetching discussions:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+app.get('/api/discussionsA5', async (req, res) => {
+  try {
+      const discussions = await discussionsController.getAllDiscussionsForModel("A5");
+      const discussionsJSON = discussions.map(discussion => ({
+          Username: discussion.Username,
+          Title: discussion.Title,
+          Description: discussion.Description
+      }));
+      res.json(discussionsJSON);
+  } catch (error) {
+      console.error('Error fetching discussions:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+app.get('/api/discussionsA6', async (req, res) => {
+  try {
+      const discussions = await discussionsController.getAllDiscussionsForModel("A6");
+      const discussionsJSON = discussions.map(discussion => ({
+          Username: discussion.Username,
+          Title: discussion.Title,
+          Description: discussion.Description
+      }));
+      res.json(discussionsJSON);
+  } catch (error) {
+      console.error('Error fetching discussions:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+app.get('/api/discussionsA7', async (req, res) => {
+  try {
+      const discussions = await discussionsController.getAllDiscussionsForModel("A7");
+      const discussionsJSON = discussions.map(discussion => ({
+          Username: discussion.Username,
+          Title: discussion.Title,
+          Description: discussion.Description
+      }));
+      res.json(discussionsJSON);
+  } catch (error) {
+      console.error('Error fetching discussions:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+app.get('/api/discussionsA8', async (req, res) => {
+  try {
+      const discussions = await discussionsController.getAllDiscussionsForModel("A8");
+      const discussionsJSON = discussions.map(discussion => ({
+          Username: discussion.Username,
+          Title: discussion.Title,
+          Description: discussion.Description
+      }));
+      res.json(discussionsJSON);
+  } catch (error) {
+      console.error('Error fetching discussions:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+app.get('/api/discussionsQ3', async (req, res) => {
+  try {
+      const discussions = await discussionsController.getAllDiscussionsForModel("Q3");
+      const discussionsJSON = discussions.map(discussion => ({
+          Username: discussion.Username,
+          Title: discussion.Title,
+          Description: discussion.Description
+      }));
+      res.json(discussionsJSON);
+  } catch (error) {
+      console.error('Error fetching discussions:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+app.get('/api/discussionsQ5', async (req, res) => {
+  try {
+      const discussions = await discussionsController.getAllDiscussionsForModel("Q5");
+      const discussionsJSON = discussions.map(discussion => ({
+          Username: discussion.Username,
+          Title: discussion.Title,
+          Description: discussion.Description
+      }));
+      res.json(discussionsJSON);
+  } catch (error) {
+      console.error('Error fetching discussions:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+app.get('/api/discussionsQ7', async (req, res) => {
+  try {
+      const discussions = await discussionsController.getAllDiscussionsForModel("Q7");
+      const discussionsJSON = discussions.map(discussion => ({
+          Username: discussion.Username,
+          Title: discussion.Title,
+          Description: discussion.Description
+      }));
+      res.json(discussionsJSON);
+  } catch (error) {
+      console.error('Error fetching discussions:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+app.get('/api/discussionsQ8', async (req, res) => {
+  try {
+      const discussions = await discussionsController.getAllDiscussionsForModel("Q8");
       const discussionsJSON = discussions.map(discussion => ({
           Username: discussion.Username,
           Title: discussion.Title,
