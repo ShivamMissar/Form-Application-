@@ -26,14 +26,14 @@
 {
     position: relative;
     top: 100px;
-    left: 950px;
+    left: 1080px;
 }
 
 .A6 h2
 {
     position: relative;
-    top: 100px;
-    left: 950px;
+    top: 350px;
+    left: 1080px;
 }
 
 .comunity-containter a
@@ -44,10 +44,11 @@
 
 .A6 img
 {
-    width: 60%;
+    width: 50%;
     height: 560px;
     position: relative;
-    top: -100px;
+    top: 0px;
+    border-bottom: 10px;
     border-radius:10px ;
     
  
@@ -55,10 +56,10 @@
 
 .A4 img
 {
-    width: 60%;
+    width: 50%;
   
     position: relative;
-    top: -100px;
+    top: -10px;
     border-radius:10px ;
     
  
@@ -66,24 +67,25 @@
 
 .A7 img
 {
-    width: 60%;
+    width: 50%;
   
     position: relative;
-    top: -100px;
+    top: 0px;
     border-radius:10px ;
 }
 .A3 img
 {
-    width: 60%;
+    width: 50%;
     position: relative;
-    top: -100px;
+    top: 0px;
     border-radius:10px ;
 }
 .A1 img
 {
-    width: 60%;
+    width: 50%;
     position: relative;
-    top: -100px;
+    top: 0px;
+    
     border-radius:10px ;
 
 }
@@ -91,41 +93,41 @@
 {
     position: relative;
     top: 100px;
-    left: 950px;
+    left: 1080px;
 }
 
 .A3 h2
 {
     position: relative;
     top: 100px;
-    left: 950px;
+    left: 1080px;
 }
 .A5 h2
 {
     position: relative;
     top: 100px;
-    left: 950px;
+    left: 1080px;
 }
 
 .A8 h2
 {
     position: relative;
     top: 100px;
-    left: 950px;
+    left: 1080px;
 }
 
 .A7 h2
 {
     position: relative;
     top: 100px;
-    left: 950px;
+    left: 1080px;
 }
 
 .A5 img
 {
-    width: 60%;
+    width: 50%;
     position: relative;
-    top: -100px;
+    top: 0px;
     border-radius:10px ;
 
 }
@@ -134,49 +136,49 @@
 {
     position: relative;
     top: 100px;
-    left: 950px;
+    left: 1080px;
 }
 .Q3 h2
 {
     position: relative;
     top: 100px;
-    left: 950px;
+    left: 1080px;
 }
 .Q5 h2
 {
     position: relative;
     top: 100px;
-    left: 950px;
+    left: 1080px;
 }
 .Q7 h2
 {
     position: relative;
     top: 100px;
-    left: 950px;
+    left: 1080px;
 }
 .A8 img
 {
-    width: 60%;
+    width: 50%;
     position: relative;
-    top: -100px;
+    top: 0px;
     border-radius:10px ;
 }
 
 
 .Q3 img
 {
-    width: 60%;
+    width: 50%;
     position: relative;
-    top: -100px;
+    top: 0px;
     border-radius:10px ;
 
 }
 
 .Q5 img
 {
-    width: 60%;
+    width: 50%;
     position: relative;
-    top: -100px;
+    top: 0px;
     border-radius:10px ;
 
 }
@@ -184,18 +186,18 @@
 
 .Q7 img
 {
-    width: 60%;
+    width: 50%;
     position: relative;
-    top: -100px;
+    top: 0px;
     border-radius:10px ;
 
 }
 
 .Q8 img
 {
-    width: 60%;
+    width: 50%;
     position: relative;
-    top: -100px;
+    top: 0px;
     border-radius:10px ;
 
 }
