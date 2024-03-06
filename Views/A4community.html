@@ -107,8 +107,10 @@
                         <h3 class="discussion-topic"> Topic: ${discussion.Title}</h3>
                     <p class="discussion-description"> Question ${discussion.Description}</p>
                     <p class="discussion-username">Posted by: ${discussion.Username}</p>
-                    <button class="discussion-reply"onclick="replyToDiscussion('${discussion.Title}', '${discussion.Username}')">Reply</button>
-                    <button class="discussion-delete" onclick="deleteDiscussion('${discussion.Title}', '${discussion.Username}')">Delete</button>
+
+
+                    <button class="discussion-reply" id="discussion-reply-button" onclick="replyToDiscussion('${discussion.Title}', '${discussion.Username}')">Reply</button>
+                    <button class="discussion-delete" id="discussion-delete-button"onclick="deleteDiscussion('${discussion.Title}', '${discussion.Username}')">Delete</button>
                 `;
                         discussionsContainer.appendChild(discussionElement);
                     });
