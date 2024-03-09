@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
 });
 
 // router for updating email
+
 router.post('/update-email',updateEmail); 
 router.post('/update-password',updatePassword); 
 router.post('/update-username',update_UserName); 

@@ -18,21 +18,44 @@ const post_A_Discussion = async(req,res) =>
 };
 
 
-const getAllDiscussionsForModel = async (car_model) => {
+const getAllDiscussionsForModel = async (car_model, req) => {
     try {
         const discussions = await Discussions.getAllDiscussions(car_model);
         const formattedDiscussions = discussions.map(row => {
             return {
+                DiscussionId: row.DiscussionId,
+                UserId: row.UserId,
                 Username: row.Username,
                 Title: row.Title,
                 Description: row.Description
             };
         });
+        req.session.Discussions = req.session.Discussions || [];
+        req.session.Discussions = req.session.Discussions.concat(formattedDiscussions); // Store discussions in the session
         return formattedDiscussions;
     } catch (error) {
         console.error('Error fetching discussions:', error);
-        throw error; // Propagate the error to the caller
+        throw error; 
     }
+};
+
+
+const deletePost = async (req,res) => 
+{
+    
+    try
+    {
+        const {discussionId} = req.body;
+        const find_and_delete = await Discussions.deletePostById(discussionId);
+        if(find_and_delete)
+        {
+            res.status(201).json({ message: 'Discussion deleted successfully'});
+        }
+    }catch(error)
+    {
+        console.error('Error fetching discussions:', error);
+        throw error; 
+    };
 };
 
 
@@ -40,4 +63,5 @@ const getAllDiscussionsForModel = async (car_model) => {
 
 
 
-module.exports = {post_A_Discussion, getAllDiscussionsForModel};
+
+module.exports = {post_A_Discussion, getAllDiscussionsForModel, deletePost};

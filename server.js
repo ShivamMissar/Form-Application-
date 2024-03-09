@@ -109,11 +109,13 @@ app.get('/profile', (req, res) =>
 
 app.get('/api/discussionsA4', async (req, res) => {
   try {
-      const discussions = await discussionsController.getAllDiscussionsForModel("A4");
+      const discussions = await discussionsController.getAllDiscussionsForModel("A4", req);
       const discussionsJSON = discussions.map(discussion => ({
-          Username: discussion.Username,
-          Title: discussion.Title,
-          Description: discussion.Description
+          discussionId : discussion.DiscussionId, 
+          userId: discussion.UserId,
+          username: discussion.Username,
+          title: discussion.Title,
+          description: discussion.Description
       }));
       res.json(discussionsJSON);
   } catch (error) {
@@ -121,6 +123,7 @@ app.get('/api/discussionsA4', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 
 app.get('/api/discussionsA1', async (req, res) => {
   try {

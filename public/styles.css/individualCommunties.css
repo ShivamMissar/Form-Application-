@@ -158,5 +158,18 @@
     display: none;
 }
 
+.deleteDiscussionForm input
+{
+    color: black;
+} 
+.deleteDiscussionForm button 
+{
+    background-color: red;
+    padding: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
 
 
