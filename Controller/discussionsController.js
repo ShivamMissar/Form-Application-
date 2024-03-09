@@ -9,8 +9,8 @@ const post_A_Discussion = async(req,res) =>
     const userId = req.session.User.UserId;
     try
     {
-       await Discussions.postDiscussionToDatabase({Title, description, modelType}, userId);
-        res.status(201).json({ message: 'Discussion created successfully'});
+        await Discussions.postDiscussionToDatabase({Title, description, modelType}, userId);
+        return res.redirect('/communities');
     } catch (error) {
         console.error('Error posting discussion:', error);
         res.status(500).json({ error: 'Internal server error' });
@@ -49,7 +49,8 @@ const deletePost = async (req,res) =>
         const find_and_delete = await Discussions.deletePostById(discussionId);
         if(find_and_delete)
         {
-            res.status(201).json({ message: 'Discussion deleted successfully'});
+            // res.status(201).json({ message: 'Discussion deleted successfully'});
+            return res.redirect('/communities');
         }
     }catch(error)
     {
