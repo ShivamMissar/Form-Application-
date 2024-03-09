@@ -28,7 +28,7 @@ fetch('/login-status')
             replyButtons[i].style.display = "inline-block";
         }
 
-        let deleteButtons = document.getElementsByClassName('deleteDiscussionForm');
+        let deleteButtons = document.getElementById('delete');
 
         for(let i = 0; i < deleteButtons.length; i++)
         {
