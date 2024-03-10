@@ -1,0 +1,479 @@
+@media only screen and (min-width: 1024px) and (max-width: 1366px) /*1024 * 811*/
+{
+    header
+    {
+        background-color: black;
+        width: 200%;
+        
+    }
+
+    .loginSignUp
+    {
+      
+      
+        font-size: 7px;
+        position: relative;
+        left: 400px;
+    }
+
+    .intro h3
+    {
+        position: relative;
+        top: -600px;
+        font-size: 35px;
+        text-align: center;
+        color: white;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+
+    .community
+    {
+        height: 100px;
+        width: 100%;
+        position: relative;
+        top: 780px;
+        left: 30px;
+        text-align: center;
+    }
+
+    .community img
+    {
+        width: 14%;
+        position: relative;
+        top: -4px;
+        right: 20px;
+    }
+
+    header .popularTags .trending
+    {
+        position:relative;
+        left: -40px;
+    }
+    header .popularTags a
+    {
+        font-size:13px;
+        
+  
+    }
+
+
+    .SelectCommunity .A4 h2
+    {
+        position: relative;
+        top: 450px;
+        left: 40px;
+        background-color: white;
+        z-index: 1;
+    }
+    .SelectCommunity .A4 img
+    {
+        width: 95%;
+        position: relative;
+        top: -100px;
+        left: 20px;
+        border-radius:10px;
+    }
+
+    .SelectCommunity .A6 h2
+    {
+        position: relative;
+        top: 550px;
+        left: 40px;
+        background-color: white;
+        z-index: 1;
+    }
+
+    .SelectCommunity .A6 img
+    {
+        width:95%;
+        height: 650px;
+        z-index: 0;
+        position: relative;
+        top: 0px;
+        left: 20px;
+        
+        
+    
+    }
+
+    .comunity-containter a
+    {
+        color: black;
+        
+    }
+
+   
+
+   
+
+    .SelectCommunity .A7 img
+    {
+        width: 95%;
+        z-index: 0;
+        position: relative;
+        top: 100px;
+        left: 20px;
+     
+    }
+
+    .SelectCommunity .A7 h2
+    {
+        position: relative;
+        top: 650px;
+        left:30px;
+        background-color: white;
+        z-index: 1;
+    }
+   .SelectCommunity .A3 img
+    {
+        width: 95%;
+       
+        z-index: 0;
+        position: relative;
+        top: 200px;
+        left: 20px;
+    }
+    .SelectCommunity .A3 h2
+    {
+        position: relative;
+        top: 750px;
+        left: 40px;
+        background-color: white;
+        z-index: 1;
+    }
+    .SelectCommunity .A1 img
+    {
+        width: 95%;
+        left: 20px;
+        z-index: 0;
+        position: relative;
+        top: 300px;
+
+    }
+    .SelectCommunity .A1 h2
+    {
+        position: relative;
+        top: 850px;
+        left: 40px;
+        background-color: white;
+        z-index: 1;
+    }
+    .SelectCommunity .A5 img
+    {
+        width: 95%;
+       
+        z-index: 0;
+        position: relative;
+        top: 400px;
+        left: 20px;
+
+    }
+
+    .SelectCommunity .A5 h2
+    {
+        position: relative;
+        top: 950px;
+        left: 40px;
+        background-color: white;
+        z-index: 1;
+    }
+
+    .SelectCommunity .A8 h2
+    {
+        position: relative;
+        top: 1050px;
+        left: 40px;
+        background-color: white;
+        z-index: 1;
+    }
+
+    .SelectCommunity .A8 img
+    {
+        width: 95%;
+       
+        z-index: 0;
+        position: relative;
+        top: 500px;
+        left: 20px;
+    }
+
+
+  
+    .SelectCommunity .Q5 h2
+    {
+        position: relative;
+        top: -580px;
+        left: 40px;
+        background-color: white;
+        z-index: 1;
+    }
+    
+   
+    .SelectCommunity .Q3 h2
+    {
+        position: relative;
+        top: 1150px;
+        left: 40px;
+        background-color: white;
+        z-index: 1;
+    }
+
+    .SelectCommunity .Q3 img
+    {
+        width: 95%;
+       
+        z-index: 0;
+        position: relative;
+        top: 600px;
+        left: 20px;
+
+    }
+
+    .SelectCommunity .Q5 img
+    {
+        width: 95%;
+       
+        z-index: 0;
+        position: relative;
+        top: 700px;
+        left: 20px;
+
+    }
+
+    .SelectCommunity .Q5 h2
+    {
+        position: relative;
+        top: 1250px;
+        left: 40px;
+        background-color: white;
+        z-index: 1;
+    }
+
+
+    .SelectCommunity .Q7 img
+    {
+        width: 95%;
+       
+        z-index: 0;
+        position: relative;
+        top: 800px;
+        left: 20px;
+    }
+
+    .SelectCommunity .Q7 h2
+    {
+        position: relative;
+        top: 1350px;
+        left: 40px;
+        background-color: white;
+        z-index: 1;
+    }
+
+    .SelectCommunity .Q8 img
+    {
+        width: 95%;  
+        z-index: 0;
+        position: relative;
+        top: 900px;
+        left: 20px;
+    }
+
+    
+    .SelectCommunity .Q8 h2
+    {
+        position: relative;
+        top: 1380px;
+        left:30px;
+        background-color: white;
+        z-index: 1;
+    }
+
+    .SelectCommunity
+    {
+        margin-bottom: 900px;
+    }
+
+    .back2top
+    {
+        
+        position: relative;
+        top: -70px;
+        left: 65%;
+    }
+
+    .Discussions h2
+    {
+        position: relative;
+        left: 0;
+    }
+
+
+
+
+.disccusionButton
+{
+    border: 3px solid black;
+    background: white;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+    position: relative;
+    left: 300px;
+    top: -80px;
+    display: none;
+
+}
+
+
+.Discussions h2
+{
+   font-weight: 200;
+   font-size: 42px;
+}
+
+
+.disccusionForm form
+{
+    position: relative;
+    left: 180px;
+
+}
+
+.disccusionForm h4
+{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.disccusionForm form input 
+{
+    width: 600px;
+    text-align: center;
+    padding: 8px;
+    border:none;
+    border-radius: 4px;
+    height: 25px;
+}
+
+.disccusionForm form label
+{
+    display: block;
+    color: white;
+    font-family: sans-serif;
+}
+.disccusionForm form button
+{
+    display: block;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    font-size: 17px;
+    width: 600px;
+    margin-top: 100px;
+}
+.showPosts 
+{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.Posts
+{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    left: 295px;
+    font-size: 30px;
+}
+.discussion-topic
+{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+}
+.discussion-description
+{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+}
+
+.discussion-username
+{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+}
+
+
+.discussion-reply
+{
+    border: none;
+    padding: 10px;
+    background-color: #666;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+.discussion-delete
+{
+    border: none;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.deleteDiscussionForm input
+{
+    color: black;
+} 
+.deleteDiscussionForm button 
+{
+    background-color: red;
+    padding: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+.loginForm
+{
+    width: 80%;
+    position: relative;
+    left: 50px;
+    top: 50px;
+}
+
+.loginForm form .SubmitLogin
+{
+    margin-left: 100px;
+}
+
+.registerForm
+{
+    width: 84%;
+    position: relative;
+    left: 20px;
+    top: 50px;
+}
+
+.registerForm form .SubmitRegister
+{
+    margin-left: 140px;
+}
+    
+.update-container form 
+{
+    padding: 10px;
+    position: relative;
+    left: 180px;
+}
+
+
+
+
+}
