@@ -172,5 +172,26 @@
     cursor: pointer;
 }
 
+.replyToPost form textarea
+{
+    resize: none;
+    border: none;
+    width: 300px;
+    padding: 10px;
+    height: 100px;
+}
+.replyToPost form button
+{
+    border: none;
+    padding: 10px;
+    display: block;
+    color: black;
+    cursor: pointer;
+}
+
+.replyToPost form button:hover
+{
+    background-color: #666;
+}
 
 

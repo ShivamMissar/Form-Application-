@@ -3,8 +3,10 @@
 
 <head>
     <title>A4 Community</title>
-    <link rel="icon" href="assets/audiLogo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/audiLogo.png" type="image/x-icon">
+
+   
     <meta name="author" content="Shivam Missar">
     <link rel="stylesheet" href="styles.css/general.css">
     <link rel="stylesheet" href="styles.css/individualCommunties.css">
@@ -51,6 +53,9 @@
         </div>
     </section>
 
+
+   
+
   
     <div id="discussionContainer" class="showPosts">
        
@@ -78,66 +83,10 @@
     </footer>
     
 
-
+    <script src="sites.js/fetch_data.js"></script>
     <script src="sites.js/header.js"></script>
 </body>
-
-    <script>
-        function fetchDiscussions() {
-            return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open('GET', '/api/discussionsA4');
-                xhr.onload = function () {
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        const discussions = JSON.parse(xhr.responseText);
-                        resolve(discussions);
-                    } else {
-                        reject(new Error(`Failed to fetch discussions: ${xhr.statusText}`));
-                    }
-                };
-                xhr.onerror = function () {
-                    reject(new Error('Network error occurred while fetching discussions'));
-                };
-                xhr.send();
-            });
-        }
     
-        function displayDiscussions() {
-            fetchDiscussions()
-                .then(discussions => {
-                    const discussionsContainer = document.getElementById('discussions');
-                    discussions.forEach(discussion => 
-                    {
-                        // for each new post a div is created
-                        const discussionElement = document.createElement('div');
-                        discussionElement.classList.add('discussion');
-    
-                        discussionElement.innerHTML = `
-                            <h3 class="discussion-topic"> Topic: ${discussion.title}</h3>
-                            <p class="discussion-description"> Question ${discussion.description}</p>
-                            <p class="discussion-username">Posted by: ${discussion.username}</p>
-                            
-                            
-    
-                            <button class="discussion-reply replyButton"  onclick="replyToDiscussion('${discussion.title}', '${discussion.username}')">Reply</button>
-                            <form class="deleteDiscussionForm" action="/A4/A4DeletePost" method="post">
-                                <input type="hidden" name="discussionId" value="${discussion.discussionId}">
-                                <button type="submit" id="deleteButton" class="deleteButton">Delete</button>
-                            </form>
-                        `;
-                        discussionsContainer.appendChild(discussionElement);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error fetching or displaying discussions:', error);
-                });
-        }
-    
-        // Call the displayDiscussions function to fetch and display discussions
-        displayDiscussions();
-    </script>
-    
-
     <script src="sites.js/communities.js"></script>
     <script>
         document.getElementById('modelType').value = getUrl();

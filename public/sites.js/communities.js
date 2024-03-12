@@ -1,3 +1,6 @@
+
+
+
 function getUrl() {
     let currentPage = window.location.href;
     let lastSlashIndex = currentPage.lastIndexOf("/");
@@ -38,6 +41,8 @@ fetch('/login-status')
 }).catch(error => {
     console.error('Error fetching login status:', error);
 });
+
+
 
 
   

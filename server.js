@@ -3,6 +3,7 @@ const express = require('express');
 const session = require('express-session');
 
 const discussionsController = require('./Controller/discussionsController');
+const repliessController = require('./Controller/repliesController');
 
 const bodyParser = require('body-parser');
 
@@ -107,9 +108,13 @@ app.get('/profile', (req, res) =>
 });
 
 
+
+
 app.get('/api/discussionsA4', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("A4", req);
+
+      
       const discussionsJSON = discussions.map(discussion => ({
           discussionId : discussion.DiscussionId, 
           userId: discussion.UserId,
@@ -123,6 +128,19 @@ app.get('/api/discussionsA4', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+app.get('/api/discussionsA4/:discussionId/replies', async (req, res) => {
+  try {
+      const discussionId = req.params.discussionId;
+      // Call the controller function to fetch replies for the given discussionId
+      const replies = await repliessController.get_reply_to_discussion(discussionId);
+      res.json(replies);
+  } catch (error) {
+      console.error('Error fetching replies:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 
 app.get('/api/discussionsA1', async (req, res) => {
