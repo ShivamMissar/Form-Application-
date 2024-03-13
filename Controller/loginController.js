@@ -16,17 +16,20 @@ const logUserIn = async(req,res) =>
     {
         const login_confirmation = await User.user_login(Username, Password);
 
-        if(!login_confirmation)
+        if(login_confirmation)
         {
-            return res.status(401).json({message: 'Invalid Username or password'});
-        }
-        else
-        {
-            req.session.isLoggedIn = true;
+            
+            
             req.session.User = login_confirmation.user; 
             const userDataQueryString = encodeURIComponent(JSON.stringify(login_confirmation));
            // goes back to the index page
            return res.redirect(`/?loggedIn=true&userData=${userDataQueryString}`);
+           req.session.isLoggedIn = true;
+        }
+        else
+        {
+            return res.status(401).json({message: 'Invalid Username or password'});
+            req.session.isLoggedIn = false;
         }
     } catch (error) 
     {

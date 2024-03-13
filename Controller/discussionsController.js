@@ -50,7 +50,6 @@ const deletePost = async (req,res) =>
         const find_and_delete = await Discussions.deletePostById(discussionId);
         if(find_and_delete)
         {
-            // res.status(201).json({ message: 'Discussion deleted successfully'});
             return res.redirect('/communities');
         }
     }catch(error)

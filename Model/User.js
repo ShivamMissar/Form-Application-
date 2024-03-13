@@ -54,7 +54,7 @@ class User
 
     static async user_login(Username,Password)
     {
-        const sql = "SELECT UserId,Username,Email, Password FROM users WHERE Username = ? AND Password = ?";
+        const sql = "SELECT UserId, Username, Email, Password FROM users WHERE Username = ? AND Password = ?";
         let hashpassword = User.hashPassword(Password); // has to hash the password to compare against values in the database.
         const  values = [Username,hashpassword]; // This provides the values to the query.
 
@@ -70,10 +70,18 @@ class User
                 {
                     if(result.length > 0) // if the query returns something more than 0 then it means it has found the values provided
                     {
-                        resolve({success: true, user: result[0]}); // stores the user data found first if matched in result
-                    }else
-                    {
-                        resolve({success:false});
+                        if(result[0].Password == hashedpassword)
+                        {
+                            // stores the user data found first if matched in result
+                            resolve({success: true, user: result[0]});
+                        }else {
+                            // Passwords don't match
+                            resolve({ success: false, message: "Incorrect password" });
+                        }
+                         
+                    }else {
+                        // User not found
+                        resolve({ success: false, message: "User not found" });
                     }
                 }
             });

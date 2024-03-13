@@ -69,7 +69,7 @@ class Discussions
                     reject(err);
                     return;
                 }
-                resolve(result); // this stores the disccusion with all the needed information 
+                resolve(result);
             });
         });
     }
