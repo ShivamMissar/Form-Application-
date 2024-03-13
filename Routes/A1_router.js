@@ -1,25 +1,19 @@
 
 const express = require('express');
 const router = express.Router();
-const { post_A_Discussion, getAllDiscussionsForModel } = require('../Controller/discussionsController');
+const { post_A_Discussion,deletePost } = require('../Controller/discussionsController');
+const { reply_to_discussions, reload} = require('../Controller/repliesController');
 
 
 router.get('/', (req, res) => {
     res.sendFile('A1community.html', { root: './views' });
   });
 
-  router.post('/A1discussions', post_A_Discussion);
+ 
 
-  // gets the posts made for A1 model
-  router.get('/discussions', async (req, res) => 
-  {
-    try {
-        const modelType = 'A1';
-        const discussions = await getAllDiscussionsForModel(modelType);
-        res.json(discussions);
-    } catch (error) {
-        console.error('Error fetching discussions:', error);
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
+  
+  // POST/DELETE REQUESTS
+  router.post('/A1discussions', post_A_Discussion);
+  router.post('/A1DeletePost', deletePost);
+  router.post('/A1Reply',reply_to_discussions,reload);
 module.exports = router

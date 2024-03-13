@@ -1,7 +1,8 @@
 
 
 
-function getUrl() {
+function getUrl() 
+{
     let currentPage = window.location.href;
     let lastSlashIndex = currentPage.lastIndexOf("/");
     let extractURLPART = currentPage.substring(lastSlashIndex + 1);

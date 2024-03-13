@@ -109,7 +109,7 @@ app.get('/profile', (req, res) =>
 
 
 
-
+//GET FOR A4 MODEL
 app.get('/api/discussionsA4', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("A4", req);
@@ -142,7 +142,7 @@ app.get('/api/discussionsA4/:discussionId/replies', async (req, res) => {
 });
 
 
-
+//GET FOR A1 MODEL
 app.get('/api/discussionsA1', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("A1");
@@ -157,7 +157,23 @@ app.get('/api/discussionsA1', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.get('/api/discussionsA1/:discussionId/replies', async (req, res) => {
+  try {
+      const discussionId = req.params.discussionId;
+      // Call the controller function to fetch replies for the given discussionId
+      const replies = await repliessController.get_reply_to_discussion(discussionId);
+      res.json(replies);
+  } catch (error) {
+      console.error('Error fetching replies:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
+
+
+
+
+//GET FOR A3 MODEL
 app.get('/api/discussionsA3', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("A3");
@@ -172,6 +188,19 @@ app.get('/api/discussionsA3', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.get('/api/discussionsA3/:discussionId/replies', async (req, res) => {
+  try {
+      const discussionId = req.params.discussionId;
+      // Call the controller function to fetch replies for the given discussionId
+      const replies = await repliessController.get_reply_to_discussion(discussionId);
+      res.json(replies);
+  } catch (error) {
+      console.error('Error fetching replies:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+//GET FOR A5 MODEL
 app.get('/api/discussionsA5', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("A5");
@@ -186,6 +215,19 @@ app.get('/api/discussionsA5', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.get('/api/discussionsA5/:discussionId/replies', async (req, res) => {
+  try {
+      const discussionId = req.params.discussionId;
+      // Call the controller function to fetch replies for the given discussionId
+      const replies = await repliessController.get_reply_to_discussion(discussionId);
+      res.json(replies);
+  } catch (error) {
+      console.error('Error fetching replies:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+//GET FOR A6 MODEL
 app.get('/api/discussionsA6', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("A6");
@@ -200,6 +242,19 @@ app.get('/api/discussionsA6', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.get('/api/discussionsA6/:discussionId/replies', async (req, res) => {
+  try {
+      const discussionId = req.params.discussionId;
+      // Call the controller function to fetch replies for the given discussionId
+      const replies = await repliessController.get_reply_to_discussion(discussionId);
+      res.json(replies);
+  } catch (error) {
+      console.error('Error fetching replies:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+//GET FOR A7 MODEL
 app.get('/api/discussionsA7', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("A7");
@@ -214,6 +269,20 @@ app.get('/api/discussionsA7', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.get('/api/discussionsA7/:discussionId/replies', async (req, res) => {
+  try {
+      const discussionId = req.params.discussionId;
+      // Call the controller function to fetch replies for the given discussionId
+      const replies = await repliessController.get_reply_to_discussion(discussionId);
+      res.json(replies);
+  } catch (error) {
+      console.error('Error fetching replies:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+//GET FOR A8 MODEL
 app.get('/api/discussionsA8', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("A8");
@@ -228,6 +297,20 @@ app.get('/api/discussionsA8', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.get('/api/discussionsA8/:discussionId/replies', async (req, res) => {
+  try {
+      const discussionId = req.params.discussionId;
+      // Call the controller function to fetch replies for the given discussionId
+      const replies = await repliessController.get_reply_to_discussion(discussionId);
+      res.json(replies);
+  } catch (error) {
+      console.error('Error fetching replies:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+//GET FOR Q3 MODEL
 app.get('/api/discussionsQ3', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("Q3");
@@ -242,6 +325,19 @@ app.get('/api/discussionsQ3', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.get('/api/discussionsQ3/:discussionId/replies', async (req, res) => {
+  try {
+      const discussionId = req.params.discussionId;
+      // Call the controller function to fetch replies for the given discussionId
+      const replies = await repliessController.get_reply_to_discussion(discussionId);
+      res.json(replies);
+  } catch (error) {
+      console.error('Error fetching replies:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+//GET FOR Q5 MODEL
 app.get('/api/discussionsQ5', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("Q5");
@@ -256,6 +352,19 @@ app.get('/api/discussionsQ5', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.get('/api/discussionsQ5/:discussionId/replies', async (req, res) => {
+  try {
+      const discussionId = req.params.discussionId;
+      // Call the controller function to fetch replies for the given discussionId
+      const replies = await repliessController.get_reply_to_discussion(discussionId);
+      res.json(replies);
+  } catch (error) {
+      console.error('Error fetching replies:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+//GET FOR Q7 MODEL
 app.get('/api/discussionsQ7', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("Q7");
@@ -270,6 +379,20 @@ app.get('/api/discussionsQ7', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.get('/api/discussionsQ7/:discussionId/replies', async (req, res) => {
+  try {
+      const discussionId = req.params.discussionId;
+      // Call the controller function to fetch replies for the given discussionId
+      const replies = await repliessController.get_reply_to_discussion(discussionId);
+      res.json(replies);
+  } catch (error) {
+      console.error('Error fetching replies:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+//GET FOR Q8 MODEL
 app.get('/api/discussionsQ8', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("Q8");
@@ -284,6 +407,18 @@ app.get('/api/discussionsQ8', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.get('/api/discussionsQ8/:discussionId/replies', async (req, res) => {
+  try {
+      const discussionId = req.params.discussionId;
+      // Call the controller function to fetch replies for the given discussionId
+      const replies = await repliessController.get_reply_to_discussion(discussionId);
+      res.json(replies);
+  } catch (error) {
+      console.error('Error fetching replies:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 
 const PORT = process.env.PORT || 3000;

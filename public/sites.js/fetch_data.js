@@ -20,7 +20,7 @@ function fetchDiscussions() {
 function fetchReplies(discussionId) {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', `/api/discussionsA4/${discussionId}/replies`); // Adjust the endpoint to fetch replies for a specific discussion
+        xhr.open('GET', `/api/discussionsA4/${discussionId}/replies`);
         xhr.onload = function () {
             if (xhr.status >= 200 && xhr.status < 300) {
                 const replies = JSON.parse(xhr.responseText);
@@ -45,7 +45,7 @@ function displayDiscussions() {
                 const discussionElement = document.createElement('div');
                 discussionElement.classList.add('discussion');
 
-                // Add HTML content for discussion details
+                // render the html to display the fetched data
                 discussionElement.innerHTML = `
                     <h3 class="discussion-topic"> Topic: ${discussion.title}</h3>
                     <p class="discussion-description"> Question ${discussion.description}</p>
@@ -55,8 +55,7 @@ function displayDiscussions() {
                         <h2>Reply</h2>
                         <form class="replyForm" action="/A4/A4Reply" method="post">
                             <textarea type="text" name="ReplyMessage" placeholder="Enter your message" maxlength="250"></textarea>
-                            <input type="text" name="discussionId" value="${discussion.discussionId}">
-                            <input type="text" name="Username" value="${discussion.username}">
+                            <input type="hidden" name="discussionId" value="${discussion.discussionId}">
                             <button type="submit">Reply</button>
                         </form>
                     </section>
