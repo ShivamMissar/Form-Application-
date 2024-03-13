@@ -56,23 +56,33 @@
     <form method="post" action="/register">
         <div class="form-group">
             <label for="Username">Username</label>
-            <input type="text" id="fullname" name="Username" required placeholder="Enter your full name">
-            <span id="email_invalid"></span>
+            <input type="text" id="fullname" name="Username" required placeholder="John Doe">
+            <span id="username_invalid"></span>
         </div>
 
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" id="email" name="Email" required placeholder="Enter your email">
+            <input type="text" id="email" name="Email" required placeholder="name@domain.com">
+            <span id="email_invalid"></span>
         </div>
        
         <div class="form-group">
             <label for="regpassword">Password</label>
-            <input type="password" id="regpassword" name="Password" required placeholder="Enter your password">
+            <input type="password" id="regpassword" name="Password" required placeholder="******"/>
+            <span id="password_not_secure"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="regpassword">Confrim Password</label>
+            <input type="password" id="regpasswordconfirm" name="Password" required placeholder="******">
+            <span id="password_confirmed"></span>
         </div>
 
         <button class="SubmitRegister" id="submitRegCredientals">Submit</button>
 
     </form>
+
+    <script src="sites.js/register.js"></script>
 </div>
 </body>
 

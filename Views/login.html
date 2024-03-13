@@ -52,20 +52,20 @@
     <h3>Enter your login details below</h3>
     <form method="POST" action="/login">
         <div class="form-group">
-            <label for="Username">Email</label>
-            <input type="text" id="username" name="Username" required placeholder="Enter your username">
+            <label for="Username">Username</label>
+            <input type="text" id="username" name="Username" required placeholder="John Doe">
         </div>
        
         <div class="form-group">
             <label for="Password">Password</label>
-            <input type="password" id="password" name="Password" required placeholder="Enter your password">
+            <input type="password" id="password" name="Password" required placeholder="**********"/>
         </div>
 
         <button class="SubmitLogin" id="submitLoginCredientals">Submit</button>
 
     </form>
 
-    <span id="errormessage"></span>
+    <span class="error-login" id="errormessage"></span>
 
 
 </div>
