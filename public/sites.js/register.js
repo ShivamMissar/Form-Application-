@@ -15,12 +15,12 @@ function validateUsername() {
 function validateEmail() {
     let email = document.getElementById('email');
     let emailError = document.getElementById('email_invalid');
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for email validation
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
     if (!emailPattern.test(email.value.trim())) {
         emailError.textContent = "Invalid email format";
         return false;
     } else {
-        emailError.textContent = ""; // Clear error message
+        emailError.textContent = ""; 
         return true;
     }
 }
@@ -29,12 +29,12 @@ function validateEmail() {
 function validatePassword() {
     let password = document.getElementById('regpassword');
     let passwordError = document.getElementById('password_not_secure');
-    let passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/; // Regular expression for password validation
+    let passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/; 
     if (!passwordPattern.test(password.value.trim())) {
         passwordError.textContent = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number";
         return false;
     } else {
-        passwordError.textContent = ""; // Clear error message
+        passwordError.textContent = ""; 
         return true;
     }
 }
@@ -48,7 +48,7 @@ function validateConfirmPassword() {
         confirmPasswordError.textContent = "Passwords do not match";
         return false;
     } else {
-        confirmPasswordError.textContent = ""; // Clear error message
+        confirmPasswordError.textContent = ""; 
         return true;
     }
 }
