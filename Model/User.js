@@ -70,18 +70,20 @@ class User
                 {
                     if(result.length > 0) // if the query returns something more than 0 then it means it has found the values provided
                     {
-                        if(result[0].Password == hashedpassword)
+                       
+                        if(result[0].Password == hashpassword)
                         {
-                            // stores the user data found first if matched in result
-                            resolve({success: true, user: result[0]});
-                        }else {
-                            // Passwords don't match
-                            resolve({ success: false, message: "Incorrect password" });
+                            resolve({success: true, user: result[0]}); // stores the user data found first if matched in result
                         }
-                         
-                    }else {
-                        // User not found
-                        resolve({ success: false, message: "User not found" });
+                        else
+                        {
+                            resolve({ success: false, message: "Incorrect password" });
+
+                        }
+                        
+                    }else
+                    {
+                        resolve({fail:false});
                     }
                 }
             });
