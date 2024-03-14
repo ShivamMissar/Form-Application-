@@ -50,7 +50,7 @@
 <div class="loginForm">
     <h1>Login</h1>
     <h3>Enter your login details below</h3>
-    <form method="POST" action="/login">
+    <form method="post" action="/login">
         <div class="form-group">
             <label for="Username">Username</label>
             <input type="text" id="username" name="Username" required placeholder="John Doe">
@@ -58,18 +58,17 @@
        
         <div class="form-group">
             <label for="Password">Password</label>
-            <input type="password" id="password" name="Password" required placeholder="**********"/>
+            <input type="password" id="password" name="LoginPassword" required placeholder="**********">
         </div>
 
         <button class="SubmitLogin" id="submitLoginCredientals">Submit</button>
-
     </form>
 
     <span class="error-login" id="errormessage"></span>
 
 
 </div>
-<script src="sites.js/login.js"></script>  
+<!-- <script src="sites.js/login.js"></script>   -->
 </body>
 
 </html>

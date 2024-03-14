@@ -1,5 +1,5 @@
-const POOL = require('./db');
-const md5 = require('md5');
+const DB = require('./db');
+const bcrypt = require('bcrypt');
 
 
 
@@ -12,88 +12,88 @@ class User
         return generate_user_id;
     }
 
-    static hashPassword(password)
-    {
-      
-        let hashedPass = md5(password);
-        return hashedPass;
-    }
-
-
-    static async register_user(userInformation)
-    {
-        const { Username, Email, Password } = userInformation; // gets the data from the frontend 
-        const user_id = User.genUserId(); // this generates a unique ID when storing into the database. 
-
-        // creates a SQL statement to send the data into the database
-        const sql = 'INSERT INTO users (UserId, Username, Email, Password) VALUES (?, ?, ?, ?)';
-        //hash the password for better security.
-        let hashedpassword = User.hashPassword(Password); // hashes the password using MD5 hashing method
-        const values = [user_id, Username, Email, hashedpassword]; // provides the values to the SQL statement
-        
-       
-        return new Promise((resolve,reject) => 
-        {
-            POOL.query(sql,values, (err,result) =>
-            {
-                if(err)
-                {
+    // use of bcrypt and hashes password more securely. 
+    static securePassword(password) {
+        const saltRounds = 10; // Recommended number of rounds for salt generation
+        return new Promise((resolve, reject) => {
+            bcrypt.hash(password.toString(), saltRounds, (err, hash) => {
+                if (err) {
                     reject(err);
-                    return;
-                }
-                else
-                {
-                    resolve(result.insertId); // confirms that the user has successfully registered
+                } else {
+                    resolve(hash);
                 }
             });
         });
     }
 
 
+    // Function for registering user.
+    static async register_user(userInformation) {
+        const { Username, Email, Password } = userInformation;
+        const user_id = User.genUserId();
+    
+        try {
+            const hashedPassword = await User.securePassword(Password);
+            const sql = 'INSERT INTO users (UserId, Username, Email, Password) VALUES (?, ?, ?, ?)';
+            const values = [user_id, Username, Email, hashedPassword];
+    
+            return new Promise((resolve, reject) => {
+                DB.query(sql, values, (err, result) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(result.insertId);
+                    }
+                });
+            });
+        } catch (error) {
+            console.error('Error registering user:', error);
+            throw error;
+        }
+    }
+    
 
 
-    static async user_login(Username,Password)
-    {
-        const sql = "SELECT UserId, Username, Email, Password FROM users WHERE Username = ? AND Password = ?";
-        let hashpassword = User.hashPassword(Password); // has to hash the password to compare against values in the database.
-        const  values = [Username,hashpassword]; // This provides the values to the query.
 
-        return new Promise((resolve,reject) => 
-        {
-            POOL.query(sql,values, (err,result) =>
-            {
-                if(err)
-                {
+
+    static async user_login(Username, Password) {
+        const sql = "SELECT UserId, Username, Email, Password FROM users WHERE Username = ?";
+        const values = [Username];
+        return new Promise((resolve, reject) => {
+            DB.query(sql, values, async (err, result) => {
+                if (err) {
+                    console.error('Database Error:', err);
                     reject(err);
                     return;
-                }else
-                {
-                    if(result.length > 0) // if the query returns something more than 0 then it means it has found the values provided
-                    {
-                       
-                        if(result[0].Password == hashpassword)
-                        {
-                            resolve({success: true, user: result[0]}); // stores the user data found first if matched in result
+                } else {
+                    if (result.length > 0) {
+                        const hashedPasswordFromDB = result[0].Password; // retrieves the db value to check against current password
+                        try {
+                            const passwordMatch = await bcrypt.compare(Password, hashedPasswordFromDB);
+    
+                            if (passwordMatch) {
+                                resolve({ success: true, user: result[0] }); // will get all user data and store into the user object for other uses
+                            } else {
+                                resolve({ success: false, message: "Incorrect password" });
+                            }
+                        } catch (bcryptError) {
+                            console.error('Error comparing passwords:', bcryptError);
+                            reject(bcryptError);
                         }
-                        else
-                        {
-                            resolve({ success: false, message: "Incorrect password" });
-
-                        }
-                        
-                    }else
-                    {
-                        resolve({fail:false});
+                    } else {
+                        console.log('User not found');
+                        resolve({ fail: false, message: "User not found" });
                     }
                 }
             });
         });
     }
+    
 
     static async signOut() {
         return new Promise((resolve, reject) => {
             // End the database connection
-            POOL.end((err) => {
+            DB.end((err) => {
                 if (err) {
                     console.error('Error ending database connection: ' + err.stack);
                     reject(err);
@@ -114,7 +114,7 @@ class User
 
         return new Promise((resolve,reject) => 
         {
-            POOL.query(sql,values, (err,result) =>
+            DB.query(sql,values, (err,result) =>
             {
                 if(err)
                 {
@@ -133,13 +133,13 @@ class User
     static async updatePassword(UserId,new_password)
     {
         let current_TIME = new Date();
-        const hashedpassword = md5(new_password);
+        const hashedpassword = await User.securePassword(new_password);
         const sql = "UPDATE users SET Password = ?, LastUpdatedAt = ? WHERE UserId = ?";
         const values = [hashedpassword, current_TIME, UserId];
 
         return new Promise((resolve,reject) => 
         {
-            POOL.query(sql,values, (err,result) =>
+            DB.query(sql,values, (err,result) =>
             {
                 if(err)
                 {
@@ -164,7 +164,7 @@ class User
 
         return new Promise((resolve,reject) => 
         {
-            POOL.query(sql,values, (err,result) =>
+            DB.query(sql,values, (err,result) =>
             {
                 if(err)
                 {

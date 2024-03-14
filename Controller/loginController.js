@@ -9,14 +9,14 @@ const get_login_data = (req,res) => {res.sendFile('login.html', {root: './views'
 
 const logUserIn = async(req,res) => 
 {
-    const { Username, Password } = req.body;
+    const { Username, LoginPassword } = req.body;
     
 
     try
     {
-        const login_confirmation = await User.user_login(Username, Password);
+        const login_confirmation = await User.user_login(Username, LoginPassword);
 
-        if(login_confirmation.success)
+        if(login_confirmation.success) // if the return from the promise is success i.e., true it will execute 
         {
             req.session.isLoggedIn = true;
             req.session.User = login_confirmation.user; 
@@ -27,7 +27,7 @@ const logUserIn = async(req,res) =>
         }
         else
         {
-            req.session.isLoggedIn = false;
+           
             return res.status(401).json({message: 'Invalid Username or password'});   
         }
     } catch (error) 

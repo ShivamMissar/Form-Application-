@@ -1,11 +1,21 @@
 // Function to validate username
 function validateUsername() {
-    let username = document.getElementById('fullname');
-    let usernameError = document.getElementById('username_invalid');
-    if (username.value.trim() === '') {
+    const username = document.getElementById('fullname');
+    const usernameError = document.getElementById('username_invalid');
+    const USERNAME_PATTERN =  /^[a-zA-Z0-9]{3,16}$/;;
+
+
+
+    if (username.value == '') {
         usernameError.textContent = "Username cannot be empty";
         return false;
-    } else {
+    }
+    else if(!USERNAME_PATTERN.test(username.value))
+    {
+        usernameError.textContent = "Username cannot contain special characters";
+        return false;
+    }
+    else {
         usernameError.textContent = ""; // Clear error message
         return true;
     }
@@ -15,8 +25,8 @@ function validateUsername() {
 function validateEmail() {
     let email = document.getElementById('email');
     let emailError = document.getElementById('email_invalid');
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-    if (!emailPattern.test(email.value.trim())) {
+    const EMAILPATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+    if (!EMAILPATTERN.test(email.value)) {
         emailError.textContent = "Invalid email format";
         return false;
     } else {
@@ -29,8 +39,8 @@ function validateEmail() {
 function validatePassword() {
     let password = document.getElementById('regpassword');
     let passwordError = document.getElementById('password_not_secure');
-    let passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/; 
-    if (!passwordPattern.test(password.value.trim())) {
+    const PASSWORD_PATTERN = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/; 
+    if (!PASSWORD_PATTERN.test(password.value)) {
         passwordError.textContent = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number";
         return false;
     } else {
@@ -65,8 +75,9 @@ document.getElementById('regpassword').addEventListener('input', validatePasswor
 document.getElementById('regpasswordconfirm').addEventListener('input', validateConfirmPassword);
 
 // Add event listener to form submission
-document.getElementById('submitRegCredientals').addEventListener('click', function(event) {
-    if (!validateForm()) {
+document.getElementById('submitRegCredientals').addEventListener('submit', function(event) {
+    if (!validateForm()) 
+    {
         event.preventDefault(); // Prevent form submission if validation fails
     }
 });
