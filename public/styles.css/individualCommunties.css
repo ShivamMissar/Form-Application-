@@ -172,6 +172,12 @@
     cursor: pointer;
 }
 
+.deleteButton
+{
+    background-color: red;
+    
+}
+
 .replyToPost form textarea
 {
     resize: none;

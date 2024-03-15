@@ -10,8 +10,8 @@
                 document.getElementById('loginLink').style.display = 'none';
                 document.getElementById('registerLink').style.display = 'none';
                 document.getElementById('communityLink').style.display = 'block';
-
                 document.getElementById('trendingTags').style.display = 'block';
+            
 
                 
             } else {

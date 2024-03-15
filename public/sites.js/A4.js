@@ -63,10 +63,12 @@ function displayDiscussions() {
                     <!-- Container for displaying replies -->
                     <div class="repliesContainer"></div>
 
+                   
                     <form class="deleteDiscussionForm" action="/A4/A4DeletePost" method="post">
-                        <input type="hidden" name="discussionId" value="${discussion.discussionId}">
-                        <button type="submit" id="deleteButton" class="deleteButton">Delete</button>
-                    </form>
+                    <input type="hidden" name="discussionId" value="${discussion.discussionId}">
+                    ${discussion.userInformation && discussion.userInformation.UserId === discussion.userId ? `<button type="submit" id="deleteButton" class="deleteButton">Delete</button>` : ''}
+                </form>
+                
                 `;
                 discussionsContainer.appendChild(discussionElement);
 

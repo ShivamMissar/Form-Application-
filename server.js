@@ -120,7 +120,8 @@ app.get('/api/discussionsA4', async (req, res) => {
           userId: discussion.UserId,
           username: discussion.Username,
           title: discussion.Title,
-          description: discussion.Description
+          description: discussion.Description,
+          userInformation : req.session.User
       }));
       res.json(discussionsJSON);
   } catch (error) {
