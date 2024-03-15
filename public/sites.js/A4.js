@@ -47,12 +47,12 @@ function displayDiscussions() {
 
                 // render the html to display the fetched data
                 discussionElement.innerHTML = `
-                    <h3 class="discussion-topic"> Topic: ${discussion.title}</h3>
-                    <p class="discussion-description"> Question ${discussion.description}</p>
-                    <p class="discussion-username">Posted by: ${discussion.username}</p>
+                    <h3 class="discussion-topic"> <span class="changeColour">Topic of discussion:</span> ${discussion.title}</h3>
+                    <p class="discussion-description"> <span class="changeColour">Question:</span> ${discussion.description}</p>
+                    <p class="discussion-username"><span class="changeColour">Posted by:</span> ${discussion.username}</p>
                     
                     <section class="replyToPost">
-                        <h2>Reply</h2>
+                        <h2>Reply To User</h2>
                         <form class="replyForm" action="/A4/A4Reply" method="post">
                             <textarea type="text" name="ReplyMessage" placeholder="Enter your message" maxlength="250"></textarea>
                             <input type="hidden" name="discussionId" value="${discussion.discussionId}">
@@ -80,8 +80,8 @@ function displayDiscussions() {
                             const replyElement = document.createElement('div');
                             replyElement.classList.add('reply');
                             replyElement.innerHTML = `
-                                <p class="reply-username">Replied by: ${reply.Username}</p>
-                                <p class="reply-message">Message : ${reply.message}</p>
+                              
+                                <p class="reply-message"> <span class="changeColour">${reply.Username} Replied:</span> ${reply.message}</p>
                             `;
                             repliesContainer.appendChild(replyElement);
                         });

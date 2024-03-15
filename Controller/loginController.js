@@ -27,8 +27,9 @@ const logUserIn = async(req,res) =>
         }
         else
         {
-           
-            return res.status(401).json({message: 'Invalid Username or password'});   
+            return res.sendFile(path.join(__dirname, '../views/login.html'), {
+                errorMessage: 'Invalid Username or password'
+            });
         }
     } catch (error) 
     {

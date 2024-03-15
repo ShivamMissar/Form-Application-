@@ -32,6 +32,9 @@ function validate_form_password()
 
     return true; // will allow the form submission to happen as the fields are now non blank
 }
+
+
+
 // call the function 
 document.getElementById('username').addEventListener('input', validate_form_username);
 document.getElementById('password').addEventListener('input', validate_form_password);
