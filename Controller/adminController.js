@@ -21,7 +21,7 @@ const getuserlist = async (req, res) => {
 const deleteUser = async (req, res) => {
     try {
         const { userId } = req.body;
-        const find_and_delete = await adminModel.deleteUser(userId);
+        const find_and_delete = await adminModel.deleteUserById(userId);
         if (find_and_delete) {
             return res.redirect('/admin');
         }
@@ -30,6 +30,7 @@ const deleteUser = async (req, res) => {
         throw error;
     };
 };
+
 
 module.exports = { getuserlist, deleteUser };
 

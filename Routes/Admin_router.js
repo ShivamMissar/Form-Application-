@@ -6,6 +6,7 @@ router.get('/', (req, res) => {
   res.sendFile('admincorner.html', { root: './views' });
 });
 
-router.post('/',deleteUser);
+router.post('/deleteUser',deleteUser);
+
 
 module.exports = router;

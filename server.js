@@ -162,6 +162,7 @@ app.get('/api/discussionsA1', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 app.get('/api/discussionsA1/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
@@ -433,19 +434,6 @@ app.get('/api/admin/users', async (req, res) => {
     res.json(userList);
   } catch (error) {
     console.error('Error fetching user list:', error);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
-
-// Route to delete a user by ID
-app.delete('/api/admin/users/:userId', async (req, res) => {
-  const userId = req.params.userId;
-  try {
-    // Delete the user
-    await adminController.deleteUser(userId);
-    res.sendStatus(204); // No content
-  } catch (error) {
-    console.error('Error deleting user:', error);
     res.status(500).json({ message: 'Internal server error' });
   }
 });

@@ -73,7 +73,12 @@
                     <p>User ID: ${user.UserId}</p>
                     <p>Username: ${user.Username}</p>
                     <p>Email: ${user.Email}</p>
-                    <button onclick="deleteUser('${user.UserId}')">Delete User</button>
+                    <form method="post" action="/admin/deleteUser">
+
+                        <input type="text" name="userId" value="${user.UserId}">
+                        <button>Delete User</button>
+                    </form>
+                   
                     <hr>
                 `;
                 userListContainer.appendChild(userElement);

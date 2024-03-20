@@ -16,4 +16,6 @@ router.get('/', (req, res) => {
   router.post('/A1discussions', post_A_Discussion);
   router.post('/A1DeletePost', deletePost);
   router.post('/A1Reply',reply_to_discussions,reload);
+
+  
 module.exports = router
