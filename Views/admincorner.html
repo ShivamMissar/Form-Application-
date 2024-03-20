@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <title>AdminCorner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="author" content="Shivam Missar">
+    <link rel="icon" href="assets/audiLogo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="styles.css/general.css">
+    <link rel="stylesheet" href="styles.css/index.css">
+
+    
+    
+    <link rel="stylesheet" href="styles.css/tablet.css">
+    <link rel="stylesheet" href="styles.css/smallLaptops.css">
+    <link rel="stylesheet" href="styles.css/largelaptops.css">
+
+  
+    <!-- USED for icons -->
+    <script src="https://kit.fontawesome.com/f991cdd751.js" crossorigin="anonymous"></script>
+   
+    <script src="sites.js/header.js" defer></script>
+
+
+
+<body>
+
+
+
+    <header id="top">
+        <nav>
+            <ul>
+                <!-- Logo taken from: https://brandslogos.com/cars/audi-logo-4/  -->
+                <li><a href="/"><img id="logo" src="assets/audilogowhite.png" alt="This is the audi logo which shows 4 rings"></a></li> 
+                <li><a id="communityLink" href="/communities">Find a community</a></li>
+                <li><a id="adminLink" href="/admin">Admin</a></li>
+                
+
+                <div class="loginSignUp">
+                    <li id="loginLink"><a href="/login">Login</a></li>
+                    <li id="registerLink"><a href="/register">Register</a></li>
+                    <li id="manageAccountLink" style="display: none;"><a href="/manage-account">Manage Account</a></li>
+                    <li id="signOutLink" style="display: none;"><a href="/signout">Sign Out</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <h1>User Management</h1>
+    <div id="userList"></div>
+
+    <script>
+        // Function to fetch user list from the server
+        async function fetchUserList() {
+            try {
+                const response = await fetch('/api/admin/users');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch user list');
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Error fetching user list:', error);
+                return [];
+            }
+        }
+
+        // Function to display user list
+        async function displayUserList() {
+            const userListContainer = document.getElementById('userList');
+            const userList = await fetchUserList();
+
+            userList.forEach(user => {
+                const userElement = document.createElement('div');
+                userElement.innerHTML = `
+                    <p>User ID: ${user.UserId}</p>
+                    <p>Username: ${user.Username}</p>
+                    <p>Email: ${user.Email}</p>
+                    <button onclick="deleteUser('${user.UserId}')">Delete User</button>
+                    <hr>
+                `;
+                userListContainer.appendChild(userElement);
+            });
+        }
+
+        // Function to delete user
+        async function deleteUser(userId) {
+            try {
+                const response = await fetch(`/api/admin/users/${userId}`, {
+                    method: 'DELETE'
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to delete user');
+                }
+                // Refresh user list after deletion
+                document.getElementById('userList').innerHTML = '';
+                displayUserList();
+            } catch (error) {
+                console.error('Error deleting user:', error);
+            }
+        }
+
+        // Call displayUserList function to fetch and display user list
+        displayUserList();
+    </script>
+
+</body>
+</html>

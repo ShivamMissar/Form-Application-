@@ -13,6 +13,16 @@
                 document.getElementById('trendingTags').style.display = 'block';
             
 
+                const checkAdmin = data.getUserInformation.Username == "Admin";
+                if(checkAdmin)
+                {
+                    document.getElementById('adminLink').style.display = 'block';
+                }
+                else
+                {
+                    document.getElementById('adminLink').style.display = 'none';
+                }
+
                 
             } else {
                 // User is not logged in, hide the manage account and signout links
@@ -20,6 +30,8 @@
                 document.getElementById('signOutLink').style.display = 'none';
                 document.getElementById('communityLink').style.display = 'none';
                 document.getElementById('trendingTags').style.display = 'none';
+                document.getElementById('adminLink').style.display = 'none';
+               
                
             }
         })

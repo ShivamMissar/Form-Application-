@@ -4,6 +4,7 @@ const session = require('express-session');
 
 const discussionsController = require('./Controller/discussionsController');
 const repliessController = require('./Controller/repliesController');
+const adminController = require('./Controller/adminController');
 
 const bodyParser = require('body-parser');
 
@@ -14,6 +15,7 @@ const registerRouter = require('./Routes/register_router');
 const manage_accountRouter = require('./Routes/manage_account_router'); 
 const communitiesRouter = require('./Routes/communities_router'); 
 const signOutRouter = require('./Routes/signOut_router'); 
+const adminRouter = require('./Routes/Admin_router');
 
 const a1CommunityRouter = require('./Routes/A1_router');
 const a3CommunityRouter = require('./Routes/A3_router');
@@ -55,6 +57,7 @@ app.use('/',indexRouter);
 
 app.use('/communities', communitiesRouter);
 app.use('/login', loginRouter);
+app.use('/admin', adminRouter);
 
 //routers for all the models
 app.use('/A1', a1CommunityRouter);
@@ -88,7 +91,8 @@ app.use((req, res, next) => {
 // this gets the session data for the flag
 app.get('/login-status', (req, res) => {
   const isLoggedIn = req.session.isLoggedIn || false;
-  res.json({ isLoggedIn });
+  const getUserInformation = req.session.User;
+  res.json({ isLoggedIn, getUserInformation});
 });
 
 
@@ -419,6 +423,34 @@ app.get('/api/discussionsQ8/:discussionId/replies', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+
+
+// Route to fetch user list for admin
+app.get('/api/admin/users', async (req, res) => {
+  try {
+    const userList = await adminController.getuserlist();
+    res.json(userList);
+  } catch (error) {
+    console.error('Error fetching user list:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+// Route to delete a user by ID
+app.delete('/api/admin/users/:userId', async (req, res) => {
+  const userId = req.params.userId;
+  try {
+    // Delete the user
+    await adminController.deleteUser(userId);
+    res.sendStatus(204); // No content
+  } catch (error) {
+    console.error('Error deleting user:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
 
 
 

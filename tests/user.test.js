@@ -7,7 +7,9 @@ const bcrypt = require('bcrypt');
 describe('User', function() 
 {
 
+  // it should be reset after each use as multiple tests will make use of this object. 
   this.afterEach(function(){sinon.restore();});
+  
   describe('#genUserId()', function() {
     it('should generate a user id', function() {
       const userId = User.genUserId();
