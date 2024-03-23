@@ -11,9 +11,8 @@ describe("Reply", function()
         
         it("Should reply to user by inserting into the db", async function()
         {
-            const replyId = 1;
+            
             const fakeReply = {
-                ReplyId: replyId,
                 Message: "Test reply",
                 dicussionId: "1245",
                 Username: "TestUser"

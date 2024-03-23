@@ -34,6 +34,8 @@ describe('Discussions', function()
         });
     });
 
+    
+
     describe("getAllDiscussions()", function() 
     {
         it("This should result in getting all the discussions for that given model", async function()
@@ -43,23 +45,22 @@ describe('Discussions', function()
             const fake_query = sinon.stub(DB, 'query').callsFake((sql, values, callback) => {
                 // Simulate successful retrieval
                 const mockValues = [
-                  { DiscussionId: 1, UserId: 1, Username: 'user1', Title: 'Discussion 1', Description: 'Description 1', model },
-                  { DiscussionId: 2, UserId: 2, Username: 'user2', Title: 'Discussion 2', Description: 'Description 2', model }
+                  { DiscussionId: "7uexz", UserId: 1, Username: 'user1', Title: 'Discussion 1', Description: 'Description 1', model },
+                  { DiscussionId: "9pyxz", UserId: 2, Username: 'user2', Title: 'Discussion 2', Description: 'Description 2', model }
                 ];
                 callback(null, mockValues);
               });
               try {
                 const result = await Discussions.getAllDiscussions(model);
                 assert.strictEqual(result.length, 2); 
-                assert.strictEqual(result[0].DiscussionId, 1); 
-                assert.strictEqual(result[1].DiscussionId, 2); 
+                assert.strictEqual(result[0].DiscussionId, "7uexz"); 
+                assert.strictEqual(result[1].DiscussionId, "9pyxz"); 
                 assert.ok(result);
               } finally {
                 fake_query.restore(); 
               }
         });
     });
-
 
     describe("deletePostById()", function() {
         it("should delete a post by its ID", async function() {
@@ -79,5 +80,7 @@ describe('Discussions', function()
           }
         });
       });
+
+      
 
 });

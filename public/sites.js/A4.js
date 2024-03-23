@@ -67,6 +67,8 @@ function displayDiscussions() {
                     <form class="deleteDiscussionForm" action="/A4/A4DeletePost" method="post">
                     <input type="hidden" name="discussionId" value="${discussion.discussionId}">
                     ${discussion.userInformation && discussion.userInformation.UserId === discussion.userId ? `<button type="submit" id="deleteButton" class="deleteButton">Delete</button>` : ''}
+
+                    
                 </form>
                 
                 `;
