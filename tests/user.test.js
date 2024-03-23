@@ -2,7 +2,7 @@ const assert = require('assert');
 const sinon = require('sinon');
 const User = require('../Model/User.js');
 const DB = require('../Model/db.js');
-const bcrypt = require('bcrypt');
+
 
 describe('User', function() 
 {
