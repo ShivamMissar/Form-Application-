@@ -7,18 +7,21 @@
     <link rel="icon" href="assets/audiLogo.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="styles.css/general.css">
     <link rel="stylesheet" href="styles.css/index.css">
+    <link rel="stylesheet" href="styles.css/admin.css">
 
     
     
     <link rel="stylesheet" href="styles.css/tablet.css">
     <link rel="stylesheet" href="styles.css/smallLaptops.css">
     <link rel="stylesheet" href="styles.css/largelaptops.css">
+  
 
   
     <!-- USED for icons -->
     <script src="https://kit.fontawesome.com/f991cdd751.js" crossorigin="anonymous"></script>
    
     <script src="sites.js/header.js" defer></script>
+    <script src="sites.js/admin.js" defer ></script>
 
 
 
@@ -44,67 +47,7 @@
             </ul>
         </nav>
     </header>
-    <h1>User Management</h1>
+    <h1 class="titleAdmin">User Management</h1>
     <div id="userList"></div>
-
-    <script>
-        // Function to fetch user list from the server
-        async function fetchUserList() {
-            try {
-                const response = await fetch('/api/admin/users');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch user list');
-                }
-                return await response.json();
-            } catch (error) {
-                console.error('Error fetching user list:', error);
-                return [];
-            }
-        }
-
-        // Function to display user list
-        async function displayUserList() {
-            const userListContainer = document.getElementById('userList');
-            const userList = await fetchUserList();
-
-            userList.forEach(user => {
-                const userElement = document.createElement('div');
-                userElement.innerHTML = `
-                    <p>User ID: ${user.UserId}</p>
-                    <p>Username: ${user.Username}</p>
-                    <p>Email: ${user.Email}</p>
-                    <form method="post" action="/admin/deleteUser">
-
-                        <input type="text" name="userId" value="${user.UserId}">
-                        <button>Delete User</button>
-                    </form>
-                   
-                    <hr>
-                `;
-                userListContainer.appendChild(userElement);
-            });
-        }
-
-        // Function to delete user
-        async function deleteUser(userId) {
-            try {
-                const response = await fetch(`/api/admin/users/${userId}`, {
-                    method: 'DELETE'
-                });
-                if (!response.ok) {
-                    throw new Error('Failed to delete user');
-                }
-                // Refresh user list after deletion
-                document.getElementById('userList').innerHTML = '';
-                displayUserList();
-            } catch (error) {
-                console.error('Error deleting user:', error);
-            }
-        }
-
-        // Call displayUserList function to fetch and display user list
-        displayUserList();
-    </script>
-
 </body>
 </html>

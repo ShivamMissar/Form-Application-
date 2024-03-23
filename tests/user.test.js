@@ -10,8 +10,8 @@ describe('User', function()
   // it should be reset after each use as multiple tests will make use of this object. 
   this.afterEach(function(){sinon.restore();});
   
-  describe('#genUserId()', function() {
-    it('should generate a user id', function() {
+  describe("genUserId()", function() {
+    it("should generate a user id", function() {
       const userId = User.genUserId();
       assert.ok(userId); // Check if userId is not null
     });
@@ -33,12 +33,12 @@ describe('User', function()
     });
 
 
-    describe('#registerUser()', function() 
+    describe("registerUser()", function() 
     {
-      it('It should successfully register user', async function() 
+      it("It should successfully register user", async function() 
       {
         const fake_query = sinon.stub(DB, 'query').callsFake((sql, values, callback) => {
-          callback(null, {});
+          callback(null, {insertId : 1});
           
           
           const userInformation = 
@@ -51,6 +51,7 @@ describe('User', function()
           try {
             const result = User.register_user(userInformation);
             assert.ok(result); 
+            assert.strictEqual(result, 1);
           } finally {
             fake_query.restore(); 
           }
@@ -60,10 +61,10 @@ describe('User', function()
     });
 
     describe('User', function() {
-      describe('#user_login()', function() {
+      describe("user_login()", function() {
         
     
-        it('should fail login when user not found', async function() {
+        it("should fail login when user not found", async function() {
         
           const queryStub = sinon.stub(DB, 'query').callsFake((sql, values, callback) => {
             

@@ -6,14 +6,16 @@ const Reply = require('../Model/Reply.js');
 describe("Reply", function()
 {
 
-
     describe("replyToUser()", function()
     {
+        
         it("Should reply to user by inserting into the db", async function()
         {
+            const replyId = 1;
             const fakeReply = {
+                ReplyId: replyId,
                 Message: "Test reply",
-                dicussionId: 1,
+                dicussionId: "1245",
                 Username: "TestUser"
             };
 
@@ -21,8 +23,6 @@ describe("Reply", function()
                 // Simulate successful posting
                 callback(null, { insertId: 1 }); //acts a recipt 
               });
-
-
               try {
                 const result = await Reply.replyToUser(fakeReply);
                 assert.strictEqual(result, 1); 
@@ -41,8 +41,8 @@ describe("Reply", function()
           const fake_query = sinon.stub(DB, 'query').callsFake((sql, values, callback) => {
             // Simulate successful retrieval
             const mockValues = [
-              { Username: 'user1', message: 'Reply 1' },
-              { Username: 'user2', message: 'Reply 2' }
+              { ReplyId: "3zer", DiscussionId: discussionId, UserId: "Uzd2", Username: 'user1', message: 'Reply 1' },
+              { ReplyId: "3z8u", DiscussionId: discussionId, UserId: "Uz42",Username: 'user2', message: 'Reply 2' }
             ];
             callback(null, mockValues);
           });
@@ -50,13 +50,11 @@ describe("Reply", function()
           try {
             const result = await Reply.getReply(discussionId);
             assert.strictEqual(result.length, 2); 
-            assert.strictEqual(result[0].Username, 'user1'); 
-            assert.strictEqual(result[1].Username, 'user2');
+            assert.strictEqual(result[0].ReplyId, '3zer'); 
+            assert.strictEqual(result[1].ReplyId, '3z8u');
           } finally {
             fake_query.restore(); 
           }
         });
       });
-
-
 });

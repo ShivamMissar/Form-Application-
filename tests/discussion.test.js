@@ -7,7 +7,7 @@ const sinon = require('sinon');
 describe('Discussions', function() 
 {
 
-    describe("#postDiscussion()", function()
+    describe("postDiscussion()", function()
     {
         it("Should post a discussion to the database successfully", async function() 
         {
@@ -22,7 +22,7 @@ describe('Discussions', function()
 
             const fake_query = sinon.stub(DB, 'query').callsFake((SQL, VALUES, callback) => {
                 // Simulate successful posting
-                callback(null, { insertId: 1 }); //acts a recipt 
+                callback(null, { insertId: 1 }); 
               });
 
               try {
@@ -34,7 +34,7 @@ describe('Discussions', function()
         });
     });
 
-    describe("#getAllDiscussions()", function() 
+    describe("getAllDiscussions()", function() 
     {
         it("This should result in getting all the discussions for that given model", async function()
         {
@@ -53,6 +53,7 @@ describe('Discussions', function()
                 assert.strictEqual(result.length, 2); 
                 assert.strictEqual(result[0].DiscussionId, 1); 
                 assert.strictEqual(result[1].DiscussionId, 2); 
+                assert.ok(result);
               } finally {
                 fake_query.restore(); 
               }
@@ -60,7 +61,7 @@ describe('Discussions', function()
     });
 
 
-    describe("#deletePostById()", function() {
+    describe("deletePostById()", function() {
         it("should delete a post by its ID", async function() {
           const postId = 1;
       

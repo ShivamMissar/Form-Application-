@@ -1,4 +1,5 @@
 const adminModel = require('../Model/admin');
+const userModel = require('../Model/User');
 
 
 const getuserlist = async (req, res) => {
@@ -30,8 +31,16 @@ const deleteUser = async (req, res) => {
         throw error;
     };
 };
+const updatePasswordForUser = async (req, res) => 
+{
+    const {newPassword,userId} = req.body;
+    await adminModel.updatePassword(userId,newPassword); 
+    return res.redirect('/admin');
+  
+   
+};
 
 
-module.exports = { getuserlist, deleteUser };
+module.exports = { getuserlist, deleteUser,updatePasswordForUser };
 
 

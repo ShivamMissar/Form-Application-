@@ -1,5 +1,5 @@
 const express = require('express');
-const { deleteUser } = require('../Controller/adminController');
+const { deleteUser,updatePasswordForUser } = require('../Controller/adminController');
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/deleteUser',deleteUser);
+router.post('/UpdatePassword',updatePasswordForUser);
 
 
 module.exports = router;

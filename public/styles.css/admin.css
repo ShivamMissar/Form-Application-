@@ -1,0 +1,59 @@
+.deleteUser button
+{
+    border: none;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    width: 400px;
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.deleteUser :hover
+{
+    background-color: darkred;
+}
+
+.newPasswordForm
+{
+    margin-top: 10px;
+}
+
+.newPasswordForm input
+{
+    margin-top: 10px;
+    width: 20%;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    border: 3px solid black;
+}
+
+
+.newPasswordForm button 
+{
+    border: none;
+    background-color: #666;
+    color: white;
+    padding: 10px;
+    display: block;
+    width: 400px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.newPasswordForm button:hover
+{
+    background-color: darkgray;
+}
+.displayUserInformation
+{
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.titleAdmin
+{
+    text-align: center;
+}
