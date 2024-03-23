@@ -31,13 +31,12 @@ const deleteUser = async (req, res) => {
         throw error;
     };
 };
+
 const updatePasswordForUser = async (req, res) => 
 {
     const {newPassword,userId} = req.body;
-    await adminModel.updatePassword(userId,newPassword); 
+    await userModel.updatePassword(userId,newPassword); 
     return res.redirect('/admin');
-  
-   
 };
 
 
