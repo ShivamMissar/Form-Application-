@@ -67,10 +67,10 @@
     display:none;
 }
 
-.disccusionForm form
+.Discussions .disccusionForm form
 {
     position: relative;
-    left: 580px;
+    left: 430px;
 
 }
 
@@ -82,11 +82,12 @@
     font-family: sans-serif;
 }
 
-.disccusionForm form input 
+.Discussions .disccusionForm form input 
 {
-    width: 600px;
+    width: 800px;
     text-align: center;
     padding: 8px;
+    font-size: 18px;
     border:none;
     border-radius: 4px;
     height: 25px;
@@ -98,14 +99,14 @@
     color: white;
     font-family: sans-serif;
 }
-.disccusionForm form button
+.Discussions .disccusionForm form button
 {
     display: block;
     cursor: pointer;
     border: none;
-    padding: 10px;
+    padding: 14px;
     font-size: 17px;
-    width: 600px;
+    width: 800px;
     margin-top: 100px;
 }
 .disccusionForm form button:hover

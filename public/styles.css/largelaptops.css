@@ -1,4 +1,4 @@
-@media only screen and (min-width: 1200px)
+@media only screen and (min-width: 1940px) 
 {
     header
     {
@@ -329,10 +329,10 @@
 }
 
 
-.disccusionForm form
+ .Discussions .disccusionForm form
 {
     position: relative;
-    left: 180px;
+    left: 250px;
 
 }
 

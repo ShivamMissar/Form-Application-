@@ -40,23 +40,5 @@ async function displayUserList() {
         userListContainer.appendChild(userElement);
     });
 }
-
-// Function to delete user
-async function deleteUser(userId) {
-    try {
-        const response = await fetch(`/api/admin/users/${userId}`, {
-            method: 'DELETE'
-        });
-        if (!response.ok) {
-            throw new Error('Failed to delete user');
-        }
-        // Refresh user list after deletion
-        document.getElementById('userList').innerHTML = '';
-        displayUserList();
-    } catch (error) {
-        console.error('Error deleting user:', error);
-    }
-}
-
 // Call displayUserList function to fetch and display user list
 displayUserList();
