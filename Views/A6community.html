@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="styles.css/general.css">
 <link rel="stylesheet" href="styles.css/individualCommunties.css">
 <link rel="stylesheet" href="styles.css/smallLaptops.css">
+<link rel="stylesheet" href="styles.css/largelaptops.css">
 <link rel="stylesheet" href="styles.css/tablet.css">
 
 
@@ -44,12 +45,12 @@
 <section class="Introduction">
     <!-- https://www.audi-mediacenter.com/en/fourth-generation-audi-rs-6-avant-11975-->
 <img src="assets/a6hero.jpg">
-<h1><span class="changeTextColour">Audi</span> A6 community</h1>
+<h1><span class="changeTextColour">Audi Community/</span> A6 community</h1>
 </section>
 
 
 <section class="Discussions">
-    <h2 class="changeTextColour">Discussions</h2>
+    <h2 class="changeTextColour">User Posts</h2>
     <button id="addPost" onclick="getForm()" class="disccusionButton">Start a discussion</button>
     <div class="disccusionForm" id="disccusionForm">
         <h4>Your Post</h1>
@@ -64,9 +65,12 @@
     </div>
 </section>
 
+ 
 <div id="discussionContainer" class="showPosts">
-    <h2>User Posts</h2>
-    <div id="discussions"></div>
+       
+    <div id="discussions" class="showDiscussions"></div>
+</div>
+
 </div>
 
 <footer>
@@ -86,12 +90,12 @@
 </footer>
 
 <script src="sites.js/A6.js"></script>
-
+<script src="sites.js/header.js"></script>
 <script src="sites.js/communities.js"></script>
 <script>
     document.getElementById('modelType').value = getUrl();
 </script>
 
-<script src="sites.js/header.js"></script>
+
 </body>
 </html>

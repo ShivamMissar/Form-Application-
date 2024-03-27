@@ -12,4 +12,6 @@ router.get('/', (req, res) => {
   router.post('/A6discussions', post_A_Discussion);
   router.post('/A6DeletePost', deletePost);
   router.post('/A6Reply',reply_to_discussions,reload);
+
+  
 module.exports = router

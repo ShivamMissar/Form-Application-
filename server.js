@@ -150,11 +150,16 @@ app.get('/api/discussionsA4/:discussionId/replies', async (req, res) => {
 //GET FOR A1 MODEL
 app.get('/api/discussionsA1', async (req, res) => {
   try {
-      const discussions = await discussionsController.getAllDiscussionsForModel("A1");
+      const discussions = await discussionsController.getAllDiscussionsForModel("A1", req);
+
+      
       const discussionsJSON = discussions.map(discussion => ({
-          Username: discussion.Username,
-          Title: discussion.Title,
-          Description: discussion.Description
+          discussionId : discussion.DiscussionId, 
+          userId: discussion.UserId,
+          username: discussion.Username,
+          title: discussion.Title,
+          description: discussion.Description,
+          userInformation : req.session.User
       }));
       res.json(discussionsJSON);
   } catch (error) {
@@ -182,11 +187,16 @@ app.get('/api/discussionsA1/:discussionId/replies', async (req, res) => {
 //GET FOR A3 MODEL
 app.get('/api/discussionsA3', async (req, res) => {
   try {
-      const discussions = await discussionsController.getAllDiscussionsForModel("A3");
+      const discussions = await discussionsController.getAllDiscussionsForModel("A3", req);
+
+      
       const discussionsJSON = discussions.map(discussion => ({
-          Username: discussion.Username,
-          Title: discussion.Title,
-          Description: discussion.Description
+          discussionId : discussion.DiscussionId, 
+          userId: discussion.UserId,
+          username: discussion.Username,
+          title: discussion.Title,
+          description: discussion.Description,
+          userInformation : req.session.User
       }));
       res.json(discussionsJSON);
   } catch (error) {
@@ -194,6 +204,7 @@ app.get('/api/discussionsA3', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 app.get('/api/discussionsA3/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
@@ -209,11 +220,16 @@ app.get('/api/discussionsA3/:discussionId/replies', async (req, res) => {
 //GET FOR A5 MODEL
 app.get('/api/discussionsA5', async (req, res) => {
   try {
-      const discussions = await discussionsController.getAllDiscussionsForModel("A5");
+      const discussions = await discussionsController.getAllDiscussionsForModel("A5", req);
+
+      
       const discussionsJSON = discussions.map(discussion => ({
-          Username: discussion.Username,
-          Title: discussion.Title,
-          Description: discussion.Description
+          discussionId : discussion.DiscussionId, 
+          userId: discussion.UserId,
+          username: discussion.Username,
+          title: discussion.Title,
+          description: discussion.Description,
+          userInformation : req.session.User
       }));
       res.json(discussionsJSON);
   } catch (error) {
@@ -221,6 +237,7 @@ app.get('/api/discussionsA5', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 app.get('/api/discussionsA5/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
@@ -236,11 +253,16 @@ app.get('/api/discussionsA5/:discussionId/replies', async (req, res) => {
 //GET FOR A6 MODEL
 app.get('/api/discussionsA6', async (req, res) => {
   try {
-      const discussions = await discussionsController.getAllDiscussionsForModel("A6");
+      const discussions = await discussionsController.getAllDiscussionsForModel("A6", req);
+
+      
       const discussionsJSON = discussions.map(discussion => ({
-          Username: discussion.Username,
-          Title: discussion.Title,
-          Description: discussion.Description
+          discussionId : discussion.DiscussionId, 
+          userId: discussion.UserId,
+          username: discussion.Username,
+          title: discussion.Title,
+          description: discussion.Description,
+          userInformation : req.session.User
       }));
       res.json(discussionsJSON);
   } catch (error) {
@@ -248,6 +270,7 @@ app.get('/api/discussionsA6', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 app.get('/api/discussionsA6/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
@@ -263,11 +286,16 @@ app.get('/api/discussionsA6/:discussionId/replies', async (req, res) => {
 //GET FOR A7 MODEL
 app.get('/api/discussionsA7', async (req, res) => {
   try {
-      const discussions = await discussionsController.getAllDiscussionsForModel("A7");
+      const discussions = await discussionsController.getAllDiscussionsForModel("A7", req);
+
+      
       const discussionsJSON = discussions.map(discussion => ({
-          Username: discussion.Username,
-          Title: discussion.Title,
-          Description: discussion.Description
+          discussionId : discussion.DiscussionId, 
+          userId: discussion.UserId,
+          username: discussion.Username,
+          title: discussion.Title,
+          description: discussion.Description,
+          userInformation : req.session.User
       }));
       res.json(discussionsJSON);
   } catch (error) {
@@ -275,6 +303,7 @@ app.get('/api/discussionsA7', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 app.get('/api/discussionsA7/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
@@ -291,11 +320,16 @@ app.get('/api/discussionsA7/:discussionId/replies', async (req, res) => {
 //GET FOR A8 MODEL
 app.get('/api/discussionsA8', async (req, res) => {
   try {
-      const discussions = await discussionsController.getAllDiscussionsForModel("A8");
+      const discussions = await discussionsController.getAllDiscussionsForModel("A8", req);
+
+      
       const discussionsJSON = discussions.map(discussion => ({
-          Username: discussion.Username,
-          Title: discussion.Title,
-          Description: discussion.Description
+          discussionId : discussion.DiscussionId, 
+          userId: discussion.UserId,
+          username: discussion.Username,
+          title: discussion.Title,
+          description: discussion.Description,
+          userInformation : req.session.User
       }));
       res.json(discussionsJSON);
   } catch (error) {
@@ -303,6 +337,7 @@ app.get('/api/discussionsA8', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 app.get('/api/discussionsA8/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
@@ -319,11 +354,16 @@ app.get('/api/discussionsA8/:discussionId/replies', async (req, res) => {
 //GET FOR Q3 MODEL
 app.get('/api/discussionsQ3', async (req, res) => {
   try {
-      const discussions = await discussionsController.getAllDiscussionsForModel("Q3");
+      const discussions = await discussionsController.getAllDiscussionsForModel("Q3", req);
+
+      
       const discussionsJSON = discussions.map(discussion => ({
-          Username: discussion.Username,
-          Title: discussion.Title,
-          Description: discussion.Description
+          discussionId : discussion.DiscussionId, 
+          userId: discussion.UserId,
+          username: discussion.Username,
+          title: discussion.Title,
+          description: discussion.Description,
+          userInformation : req.session.User
       }));
       res.json(discussionsJSON);
   } catch (error) {
@@ -331,6 +371,7 @@ app.get('/api/discussionsQ3', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 app.get('/api/discussionsQ3/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
@@ -346,11 +387,16 @@ app.get('/api/discussionsQ3/:discussionId/replies', async (req, res) => {
 //GET FOR Q5 MODEL
 app.get('/api/discussionsQ5', async (req, res) => {
   try {
-      const discussions = await discussionsController.getAllDiscussionsForModel("Q5");
+      const discussions = await discussionsController.getAllDiscussionsForModel("Q5", req);
+
+      
       const discussionsJSON = discussions.map(discussion => ({
-          Username: discussion.Username,
-          Title: discussion.Title,
-          Description: discussion.Description
+          discussionId : discussion.DiscussionId, 
+          userId: discussion.UserId,
+          username: discussion.Username,
+          title: discussion.Title,
+          description: discussion.Description,
+          userInformation : req.session.User
       }));
       res.json(discussionsJSON);
   } catch (error) {
@@ -358,6 +404,7 @@ app.get('/api/discussionsQ5', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 app.get('/api/discussionsQ5/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
@@ -373,11 +420,16 @@ app.get('/api/discussionsQ5/:discussionId/replies', async (req, res) => {
 //GET FOR Q7 MODEL
 app.get('/api/discussionsQ7', async (req, res) => {
   try {
-      const discussions = await discussionsController.getAllDiscussionsForModel("Q7");
+      const discussions = await discussionsController.getAllDiscussionsForModel("Q7", req);
+
+      
       const discussionsJSON = discussions.map(discussion => ({
-          Username: discussion.Username,
-          Title: discussion.Title,
-          Description: discussion.Description
+          discussionId : discussion.DiscussionId, 
+          userId: discussion.UserId,
+          username: discussion.Username,
+          title: discussion.Title,
+          description: discussion.Description,
+          userInformation : req.session.User
       }));
       res.json(discussionsJSON);
   } catch (error) {
@@ -385,6 +437,7 @@ app.get('/api/discussionsQ7', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 app.get('/api/discussionsQ7/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
@@ -401,11 +454,16 @@ app.get('/api/discussionsQ7/:discussionId/replies', async (req, res) => {
 //GET FOR Q8 MODEL
 app.get('/api/discussionsQ8', async (req, res) => {
   try {
-      const discussions = await discussionsController.getAllDiscussionsForModel("Q8");
+      const discussions = await discussionsController.getAllDiscussionsForModel("Q8", req);
+
+      
       const discussionsJSON = discussions.map(discussion => ({
-          Username: discussion.Username,
-          Title: discussion.Title,
-          Description: discussion.Description
+          discussionId : discussion.DiscussionId, 
+          userId: discussion.UserId,
+          username: discussion.Username,
+          title: discussion.Title,
+          description: discussion.Description,
+          userInformation : req.session.User
       }));
       res.json(discussionsJSON);
   } catch (error) {
@@ -413,6 +471,7 @@ app.get('/api/discussionsQ8', async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
   }
 });
+
 app.get('/api/discussionsQ8/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;

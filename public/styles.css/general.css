@@ -151,3 +151,8 @@ nav
 {
     border-bottom: 3px solid red;
 }
+
+.active 
+{
+    border-bottom: 2px solid red;
+}
