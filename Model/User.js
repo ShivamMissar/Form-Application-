@@ -53,39 +53,6 @@ class User
     }
     
 
-    static async user_login(Username, Password) {
-        const sql = "SELECT UserId, Username, Email, Password FROM users WHERE Username = ?";
-        const values = [Username];
-        return new Promise((resolve, reject) => {
-            DB.query(sql, values, async (err, result) => {
-                if (err) {
-                    console.error('Database Error:', err);
-                    reject(err);
-                    return;
-                } else {
-                    if (result.length > 0) {
-                        const hashedPasswordFromDB = result[0].Password; // retrieves the db value to check against current password
-                        try {
-                            const passwordMatch = await bcrypt.compare(Password, hashedPasswordFromDB);
-    
-                            if (passwordMatch) {
-                                resolve({ success: true, user: result[0] }); // will get all user data and store into the user object for other uses
-                            } else {
-                                resolve({ success: false, message: "Incorrect password" });
-                            }
-                        } catch (bcryptError) {
-                            console.error('Error comparing passwords:', bcryptError);
-                            reject(bcryptError);
-                        }
-                    } else {
-                        console.log('User not found');
-                        resolve({ fail: false, message: "User not found" });
-                    }
-                }
-            });
-        });
-    }
-
     // static async user_login(Username, Password) {
     //     const sql = "SELECT UserId, Username, Email, Password FROM users WHERE Username = ?";
     //     const values = [Username];
@@ -97,12 +64,12 @@ class User
     //                 return;
     //             } else {
     //                 if (result.length > 0) {
-    //                     const hashedPasswordFromDB = result[0].Password;
+    //                     const hashedPasswordFromDB = result[0].Password; // retrieves the db value to check against current password
     //                     try {
     //                         const passwordMatch = await bcrypt.compare(Password, hashedPasswordFromDB);
     
     //                         if (passwordMatch) {
-    //                             resolve({ success: true, user: result[0] });
+    //                             resolve({ success: true, user: result[0] }); // will get all user data and store into the user object for other uses
     //                         } else {
     //                             resolve({ success: false, message: "Incorrect password" });
     //                         }
@@ -112,12 +79,45 @@ class User
     //                     }
     //                 } else {
     //                     console.log('User not found');
-    //                     resolve({ success: false, message: "User not found" });
+    //                     resolve({ fail: false, message: "User not found" });
     //                 }
     //             }
     //         });
     //     });
     // }
+
+    static async user_login(Username, Password) {
+        const sql = "SELECT UserId, Username, Email, Password FROM users WHERE Username = ?";
+        const values = [Username];
+        return new Promise((resolve, reject) => {
+            DB.query(sql, values, async (err, result) => {
+                if (err) {
+                    console.error('Database Error:', err);
+                    reject(err);
+                    return;
+                } else {
+                    if (result.length > 0) {
+                        const hashedPasswordFromDB = result[0].Password;
+                        try {
+                            const passwordMatch = await bcrypt.compare(Password, hashedPasswordFromDB);
+    
+                            if (passwordMatch) {
+                                resolve({ success: true, user: result[0] });
+                            } else {
+                                resolve({ success: false, message: "Incorrect password" });
+                            }
+                        } catch (bcryptError) {
+                            console.error('Error comparing passwords:', bcryptError);
+                            reject(bcryptError);
+                        }
+                    } else {
+                        console.log('User not found');
+                        resolve({ success: false, message: "User not found" });
+                    }
+                }
+            });
+        });
+    }
     
     
 
