@@ -12,7 +12,7 @@ const getuserlist = async (req, res) => {
                 Email: row.Email
             };
         });
-        return formattedUserList; // Return the formatted user list
+        return formattedUserList;
     } catch (error) {
         console.error('Error fetching user list:', error);
         throw error;

@@ -53,8 +53,6 @@ app.use(session({
 
 // index page
 app.use('/',indexRouter);
-
-
 app.use('/communities', communitiesRouter);
 app.use('/login', loginRouter);
 app.use('/admin', adminRouter);
@@ -72,17 +70,11 @@ app.use('/Q5', q5CommunityRouter);
 app.use('/Q7', q7CommunityRouter);
 app.use('/Q8', q8CommunityRouter);
 
-
-
-
-
-
-
 app.use('/signout', signOutRouter);
 app.use('/register', registerRouter);
 app.use('/manage-account', manage_accountRouter);
 
-// Add this middleware function to your Express app
+
 app.use((req, res, next) => {
   console.log('Session data:', req.session);
   next();
@@ -137,7 +129,6 @@ app.get('/api/discussionsA4', async (req, res) => {
 app.get('/api/discussionsA4/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
-      // Call the controller function to fetch replies for the given discussionId
       const replies = await repliessController.get_reply_to_discussion(discussionId);
       res.json(replies);
   } catch (error) {
@@ -171,7 +162,6 @@ app.get('/api/discussionsA1', async (req, res) => {
 app.get('/api/discussionsA1/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
-      // Call the controller function to fetch replies for the given discussionId
       const replies = await repliessController.get_reply_to_discussion(discussionId);
       res.json(replies);
   } catch (error) {
@@ -208,7 +198,6 @@ app.get('/api/discussionsA3', async (req, res) => {
 app.get('/api/discussionsA3/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
-      // Call the controller function to fetch replies for the given discussionId
       const replies = await repliessController.get_reply_to_discussion(discussionId);
       res.json(replies);
   } catch (error) {
@@ -241,7 +230,6 @@ app.get('/api/discussionsA5', async (req, res) => {
 app.get('/api/discussionsA5/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
-      // Call the controller function to fetch replies for the given discussionId
       const replies = await repliessController.get_reply_to_discussion(discussionId);
       res.json(replies);
   } catch (error) {
@@ -274,7 +262,6 @@ app.get('/api/discussionsA6', async (req, res) => {
 app.get('/api/discussionsA6/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
-      // Call the controller function to fetch replies for the given discussionId
       const replies = await repliessController.get_reply_to_discussion(discussionId);
       res.json(replies);
   } catch (error) {
@@ -287,8 +274,6 @@ app.get('/api/discussionsA6/:discussionId/replies', async (req, res) => {
 app.get('/api/discussionsA7', async (req, res) => {
   try {
       const discussions = await discussionsController.getAllDiscussionsForModel("A7", req);
-
-      
       const discussionsJSON = discussions.map(discussion => ({
           discussionId : discussion.DiscussionId, 
           userId: discussion.UserId,
@@ -307,7 +292,6 @@ app.get('/api/discussionsA7', async (req, res) => {
 app.get('/api/discussionsA7/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
-      // Call the controller function to fetch replies for the given discussionId
       const replies = await repliessController.get_reply_to_discussion(discussionId);
       res.json(replies);
   } catch (error) {
@@ -341,7 +325,6 @@ app.get('/api/discussionsA8', async (req, res) => {
 app.get('/api/discussionsA8/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
-      // Call the controller function to fetch replies for the given discussionId
       const replies = await repliessController.get_reply_to_discussion(discussionId);
       res.json(replies);
   } catch (error) {
@@ -375,7 +358,6 @@ app.get('/api/discussionsQ3', async (req, res) => {
 app.get('/api/discussionsQ3/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
-      // Call the controller function to fetch replies for the given discussionId
       const replies = await repliessController.get_reply_to_discussion(discussionId);
       res.json(replies);
   } catch (error) {
@@ -408,7 +390,6 @@ app.get('/api/discussionsQ5', async (req, res) => {
 app.get('/api/discussionsQ5/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
-      // Call the controller function to fetch replies for the given discussionId
       const replies = await repliessController.get_reply_to_discussion(discussionId);
       res.json(replies);
   } catch (error) {
@@ -441,7 +422,6 @@ app.get('/api/discussionsQ7', async (req, res) => {
 app.get('/api/discussionsQ7/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
-      // Call the controller function to fetch replies for the given discussionId
       const replies = await repliessController.get_reply_to_discussion(discussionId);
       res.json(replies);
   } catch (error) {
@@ -475,7 +455,6 @@ app.get('/api/discussionsQ8', async (req, res) => {
 app.get('/api/discussionsQ8/:discussionId/replies', async (req, res) => {
   try {
       const discussionId = req.params.discussionId;
-      // Call the controller function to fetch replies for the given discussionId
       const replies = await repliessController.get_reply_to_discussion(discussionId);
       res.json(replies);
   } catch (error) {

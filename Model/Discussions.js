@@ -37,7 +37,7 @@ class Discussions
 
 
 
-    // this function is used to get all the discussions based on the model
+   
     static async getAllDiscussions(discussionsForModel) {
         const SQL = "SELECT posts.DiscussionId, posts.UserId, users.Username, posts.Title, posts.Description FROM users, posts WHERE posts.UserId = users.UserId AND ModelType = ?";
         const VALUES = [discussionsForModel];
@@ -49,7 +49,7 @@ class Discussions
                     reject(err);
                     return;
                 }
-                resolve(result); // this stores the disccusion with all the needed information 
+                resolve(result);
             });
         });
     }

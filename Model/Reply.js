@@ -28,7 +28,7 @@ class Reply
         });
     }
     
-     //this class will query the reply for visual display
+
      static async getReply(discussionId) {
         const SQL = "SELECT Username, message FROM reply WHERE DiscussionId = ?";
         const VALUES = [discussionId];

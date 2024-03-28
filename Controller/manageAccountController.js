@@ -3,7 +3,7 @@ const User = require('../Model/User');
 
 
 
-//  update email function
+
 const updateEmail = async (req,res) => 
 {
 
@@ -14,7 +14,8 @@ const updateEmail = async (req,res) =>
     
     res.redirect('/manage-account');
 };
-//update password function 
+
+
 const updatePassword = async (req, res) => 
 {
     const {newPassword} = req.body;
@@ -24,7 +25,6 @@ const updatePassword = async (req, res) =>
     res.redirect('/manage-account');
 };
 
-// update username function
 const update_UserName = async(req, res) => 
 {
     const {newUsername} = req.body;

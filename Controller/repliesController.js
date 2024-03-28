@@ -23,7 +23,7 @@ const reply_to_discussions = async(req, res) =>
 
 const get_reply_to_discussion = async (discussionId) => {
     const replies = await Replies.getReply(discussionId);
-    return replies; // Send the fetched replies
+    return replies;
 }
 
 

@@ -1,4 +1,4 @@
- // Function to fetch user list from the server
+
  async function fetchUserList() {
     try {
         const response = await fetch('/api/admin/users');
@@ -12,7 +12,7 @@
     }
 }
 
-// Function to display user list
+
 async function displayUserList() {
     const userListContainer = document.getElementById('userList');
     const userList = await fetchUserList();
@@ -40,5 +40,5 @@ async function displayUserList() {
         userListContainer.appendChild(userElement);
     });
 }
-// Call displayUserList function to fetch and display user list
+// call displayUserList to display all the users on screen
 displayUserList();

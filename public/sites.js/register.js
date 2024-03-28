@@ -1,4 +1,4 @@
-// Function to validate username
+
 function validateUsername() {
     const username = document.getElementById('fullname');
     const usernameError = document.getElementById('username_invalid');
@@ -21,7 +21,7 @@ function validateUsername() {
     }
 }
 
-// Function to validate email
+
 function validateEmail() {
     let email = document.getElementById('email');
     let emailError = document.getElementById('email_invalid');
@@ -35,7 +35,7 @@ function validateEmail() {
     }
 }
 
-// Function to validate password strength
+
 function validatePassword() {
     let password = document.getElementById('regpassword');
     let passwordError = document.getElementById('password_not_secure');
@@ -49,7 +49,7 @@ function validatePassword() {
     }
 }
 
-// Function to validate confirm password
+
 function validateConfirmPassword() {
     let password = document.getElementById('regpassword');
     let confirmPassword = document.getElementById('regpasswordconfirm');
@@ -68,13 +68,13 @@ function validateForm() {
     return validateUsername() && validateEmail() && validatePassword() && validateConfirmPassword();
 }
 
-// Add event listeners to the input fields
+
 document.getElementById('fullname').addEventListener('input', validateUsername);
 document.getElementById('email').addEventListener('input', validateEmail);
 document.getElementById('regpassword').addEventListener('input', validatePassword);
 document.getElementById('regpasswordconfirm').addEventListener('input', validateConfirmPassword);
 
-// Add event listener to form submission
+
 document.getElementById('submitRegCredientals').addEventListener('submit', function(event) {
     if (!validateForm()) 
     {

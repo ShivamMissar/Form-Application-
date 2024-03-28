@@ -9,6 +9,6 @@ router.get('/', (req, res) => {
 });
 
 // POST request to handle user registration
-router.post('/', registerUser); // pass the function reference without calling it
+router.post('/', registerUser); 
 
 module.exports = router;
