@@ -13,11 +13,15 @@
                 document.getElementById('trendingTags').style.display = 'block';
             
 
-                const checkAdmin = data.getUserInformation.Username == 'Admin';
-                if(checkAdmin)
-                {
-                    document.getElementById('adminLink').style.display = 'block';
-                }
+                const isAdmin = data.getUserInformation.Username === 'Admin';
+                console.log('Is admin:', isAdmin);
+            if (isAdmin) {
+                console.log('User is admin. Showing admin link.');
+                document.getElementById('adminLink').style.display = 'block';
+            } else {
+                console.log('User is not admin. Hiding admin link.');
+                document.getElementById('adminLink').style.display = 'none';
+            }
             
 
                 
