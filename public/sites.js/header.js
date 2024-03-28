@@ -13,15 +13,12 @@
                 document.getElementById('trendingTags').style.display = 'block';
             
 
-                const checkAdmin = data.getUserInformation.Username == "Admin";
+                const checkAdmin = data.getUserInformation.Username == 'Admin';
                 if(checkAdmin)
                 {
                     document.getElementById('adminLink').style.display = 'block';
                 }
-                else
-                {
-                    document.getElementById('adminLink').style.display = 'none';
-                }
+            
 
                 
             } else {
